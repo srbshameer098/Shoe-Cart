@@ -2,6 +2,9 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:untitled1/UI/Accessory.dart';
+import 'package:untitled1/UI/Cloths.dart';
+import 'package:untitled1/UI/Gadgets.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -12,20 +15,20 @@ class Home extends StatefulWidget {
 
 
 List<String> img = [
-  'assets/soccer.png',
-  'assets/basketball.png',
-  'assets/football.png',
-  'assets/baseball.png',
-  'assets/tennis.png',
-  'assets/volly.png'
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/21.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
 ];                //_________________  Banner  ______________________
 List<String> name = [
-  'Soccer',
-  'Basketball',
-  'Football',
-  'Baseball',
-  'Tennis',
-  'Volleyball'
+  'Cloths',
+  'Headphones',
+  'Laptobs',
+  'Smart watches',
+  'Mobiles',
+  'Wallets'
 ];
 
 
@@ -60,75 +63,96 @@ class _HomeState extends State<Home> {
         )),
       ),
         body:  SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(12.0),
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
 
-                Row(
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
                   children: [
                     Container(
                       height: 40.h,
-               decoration: BoxDecoration(color: Color(0xffded9f1), borderRadius: BorderRadius.circular(12.r),),
+                             decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
                           child: Text('All Category',style: TextStyle(
-                            color: Color(0xff926aed),
+                            color: Color(0xfd000000),
                           ),),
                         ),
                       ),
                     ),
-SizedBox(width: 10.w,),
+                          SizedBox(width: 10.w,),
                     Container(
                       height: 40.h,
-                      decoration: BoxDecoration(color: Color(0xffded9f1), borderRadius: BorderRadius.circular(12.r),),
+                      decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
-                          child: Text('Gadgets',style: TextStyle(
-                            color: Color(0xff926aed),
-                          ),),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 10.w,),
-                    Container(
-                      height: 40.h,
-                      decoration: BoxDecoration(color: Color(0xffded9f1), borderRadius: BorderRadius.circular(12.r),),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: Text('Cloths',style: TextStyle(
-                            color: Color(0xff926aed),
-                          ),),
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (_)=>Gadgets()));
+                            },
+                            child: Text('Gadgets',style: TextStyle(
+                              color: Color(0xfd000000),
+                            ),),
+                          ),
                         ),
                       ),
                     ),
                     SizedBox(width: 10.w,),
                     Container(
                       height: 40.h,
-                      decoration: BoxDecoration(color: Color(0xffded9f1), borderRadius: BorderRadius.circular(12.r),),
+                      decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
-                          child: Text('Accessory',style: TextStyle(
-                            color: Color(0xff926aed),
-                          ),),
+                          child:  GestureDetector(
+                            onTap: (){
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (_)=>Cloths()));
+                            },
+                            child: Text('Cloths',style: TextStyle(
+                              color: Color(0xfd000000),
+                            ),),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10.w,),
+                    Container(
+                      height: 40.h,
+                      decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (_)=>Accessory()));
+                            },
+                            child: Text('Accessory',style: TextStyle(
+                              color: Color(0xfd000000),
+                            ),),
+                          ),
                         ),
                       ),
                     ),
 
                   ],
                 ),
+              ),
 
-                SizedBox(height: 10.h,),
-                Container(
-                  width: 375,
-                  height: 172,
+              SizedBox(height: 10.h,),
+
+              Center(
+                child: Container(
+                  width: 360,
+                  height: 175,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Color(0xff0f0f1c)),
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color(0xffffffff)),
                   child: ListView(
                     children: [
                       CarouselSlider(
@@ -136,62 +160,75 @@ SizedBox(width: 10.w,),
                           //1st Image of Slider
                           Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(0),
                             ),
                             child: Image.asset(
-                              "assets/bimg1.png",
+                              "assets/banner.png",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
                             ),
                           ),
 
                           //2nd Image of Slider
                           Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(0),
                             ),
-                            child: Image.asset("assets/bimg1.png"),
+                            child: Image.asset(
+                              "assets/banner.png",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
+                            ),
                           ),
 
                           //3rd Image of Slider
                           Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(0),
                             ),
-                            child: Image.asset("assets/bimg1.png"),
+                            child: Image.asset(
+                              "assets/banner.png",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
+                            ),
                           ),
                         ],
 
                         //Slider Container properties
                         options: CarouselOptions(
-                          height: 170.0,
+                          height: 175.0,
                           enlargeCenterPage: true,
                           autoPlay: true,
                           aspectRatio: 16 / 9,
                           autoPlayCurve: Curves.fastOutSlowIn,
                           enableInfiniteScroll: true,
                           autoPlayAnimationDuration: Duration(milliseconds: 800),
-                          viewportFraction: 1.5,
+                          viewportFraction: 1,
                         ),
                       ),
                     ],
                   ),
                 ),
+              ),
 
 
-SizedBox(height: 15.h,),
+          SizedBox(height: 15.h,),
 
-                Container(
+              Container(
 
-                  width: 375.w,
-                  height: 210.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color:  Color(0xffffffff)),
+                width: 375.w,
+                height: 253.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color:  Color(0xffffffff)),
 
 
 
-                  child: Column(
-                    children: [
-                      Row(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
 
                         children: [
                           Padding(
@@ -199,12 +236,14 @@ SizedBox(height: 15.h,),
                             child: Column(
                               children: [
 
-                                Text(
-                                    "Deals and offers",
-                                    style: TextStyle(
-                                      fontSize: 18.sp,
-                                      fontWeight: FontWeight.w600,
-                                    )
+                                Center(
+                                  child: Text(
+                                      "Deals and offers",
+                                      style: TextStyle(
+                                        fontSize: 18.sp,
+                                        fontWeight: FontWeight.w600,
+                                      )
+                                  ),
                                 ),
 
                                 Text(
@@ -222,159 +261,41 @@ SizedBox(height: 15.h,),
                         ],
 
                       ),
-                      SizedBox(
-                        height: 135.h,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 160.h,
                         child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemCount: img.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  selectedIndex = index;
-                                });
-                              },
-                              child: Container(
-                                width: 130.w,
-                                height: 180.h,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    color: selectedIndex == index
-                                        ? Color(0xffe88a64)
-                                        : Color(0xff222232)),
-                                child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                      child: Image.asset(
-                                        img[index],
-                                        width: 56.w,
-                                        height: 56.h,
-                                      ),
-                                    ),
-                                    Text(name[index],
-                                        style: TextStyle(
-                                          fontSize: 18.sp,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w600,
-                                        )),
-                                    SizedBox(
-                                      width: 120.w,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            );
-                          },
-                          separatorBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                              width: 14.w,
-                            );
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-
-
-
-
-
-
-
-                SizedBox(height: 15.h,),
-
-                Container(
-
-                  width: 375.w,
-                  height: 210.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color:  Color(0xffffffff)),
-
-
-
-                  child: Column(
-                    children: [
-                      SizedBox(height:60.h,
-                        child: Row(
-
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                            return Container(
+                              width: 160.w,
+                              height: 210.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: Color(0xff222232)),
                               child: Column(
                                 children: [
-
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                        "Home and outdoor",
-                                        style: TextStyle(
-                                          fontSize: 18.sp,
-                                          fontWeight: FontWeight.w600,
-                                        )
+                                    padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                    child: Image.asset(
+                                      img[index],
+                                      width: 76.65777587890625.w,
+                                      height: 83.19111633300781.h,
                                     ),
                                   ),
-
-                                  // Text(
-                                  //     "Electronic equipments",
-                                  //     style: TextStyle(
-                                  //       fontSize: 13.sp,
-                                  //       fontWeight: FontWeight.w400,
-                                  //     )
-                                  // )
-
+                                  Text(name[index],
+                                      style: TextStyle(
+                                        fontSize: 13.sp,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w400,
+                                      )),
+                                  SizedBox(
+                                    width: 120.w,
+                                  ),
                                 ],
-                              ),
-                            )
-
-                          ],
-
-                        ),
-                      ),
-                      SizedBox(
-                        height: 135.h,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: img.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  selectedIndex = index;
-                                });
-                              },
-                              child: Container(
-                                width: 130.w,
-                                height: 180.h,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    color: selectedIndex == index
-                                        ? Color(0xffe88a64)
-                                        : Color(0xff222232)),
-                                child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                      child: Image.asset(
-                                        img[index],
-                                        width: 56.w,
-                                        height: 56.h,
-                                      ),
-                                    ),
-                                    Text(name[index],
-                                        style: TextStyle(
-                                          fontSize: 18.sp,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w600,
-                                        )),
-                                    SizedBox(
-                                      width: 120.w,
-                                    ),
-                                  ],
-                                ),
                               ),
                             );
                           },
@@ -385,9 +306,10 @@ SizedBox(height: 15.h,),
                           },
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+              ),
 
 
 
@@ -396,111 +318,101 @@ SizedBox(height: 15.h,),
 
 
 
+              SizedBox(height: 15.h,),
 
-                SizedBox(height: 15.h,),
+              Container(
 
-                Container(
-
-                  width: 375.w,
-                  height: 210.h,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color:  Color(0xffffffff)),
-
+                width: 375.w,
+                height: 210.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color:  Color(0xffffffff)),
 
 
-                  child: Column(
-                    children: [
-                      SizedBox(height:60.h,
-                        child: Row(
 
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
+                child: Column(
+                  children: [
+                    SizedBox(height:60.h,
+                      child: Row(
 
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                        "Consumer electronics",
-                                        style: TextStyle(
-                                          fontSize: 18.sp,
-                                          fontWeight: FontWeight.w600,
-                                        )
-                                    ),
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                      "Home and outdoor",
+                                      style: TextStyle(
+                                        fontSize: 18.sp,
+                                        fontWeight: FontWeight.w600,
+                                      )
                                   ),
-
-                                  // Text(
-                                  //     "Electronic equipments",
-                                  //     style: TextStyle(
-                                  //       fontSize: 13.sp,
-                                  //       fontWeight: FontWeight.w400,
-                                  //     )
-                                  // )
-
-                                ],
-                              ),
-                            )
-
-                          ],
-
-                        ),
-                      ),
-                      SizedBox(
-                        height: 135.h,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: img.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  selectedIndex = index;
-                                });
-                              },
-                              child: Container(
-                                width: 130.w,
-                                height: 180.h,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(16),
-                                    color: selectedIndex == index
-                                        ? Color(0xffe88a64)
-                                        : Color(0xff222232)),
-                                child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                      child: Image.asset(
-                                        img[index],
-                                        width: 56.w,
-                                        height: 56.h,
-                                      ),
-                                    ),
-                                    Text(name[index],
-                                        style: TextStyle(
-                                          fontSize: 18.sp,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w600,
-                                        )),
-                                    SizedBox(
-                                      width: 120.w,
-                                    ),
-                                  ],
                                 ),
-                              ),
-                            );
-                          },
-                          separatorBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                              width: 14.w,
-                            );
-                          },
-                        ),
+
+                                // Text(
+                                //     "Electronic equipments",
+                                //     style: TextStyle(
+                                //       fontSize: 13.sp,
+                                //       fontWeight: FontWeight.w400,
+                                //     )
+                                // )
+
+                              ],
+                            ),
+                          )
+
+                        ],
+
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: 135.h,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: img.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            width: 130.w,
+                            height: 180.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16),
+                                color:  Color(0xff222232)),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                  child: Image.asset(
+                                    img[index],
+                                    width: 56.w,
+                                    height: 56.h,
+                                  ),
+                                ),
+                                Text(name[index],
+                                    style: TextStyle(
+                                      fontSize: 18.sp,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600,
+                                    )),
+                                SizedBox(
+                                  width: 120.w,
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            width: 14.w,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
+              ),
 
 
 
@@ -509,8 +421,111 @@ SizedBox(height: 15.h,),
 
 
 
-              ],
-            ),
+
+              SizedBox(height: 15.h,),
+
+              Container(
+
+                width: 375.w,
+                height: 210.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color:  Color(0xffffffff)),
+
+
+
+                child: Column(
+                  children: [
+                    SizedBox(height:60.h,
+                      child: Row(
+
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                      "Consumer electronics",
+                                      style: TextStyle(
+                                        fontSize: 18.sp,
+                                        fontWeight: FontWeight.w600,
+                                      )
+                                  ),
+                                ),
+
+                                // Text(
+                                //     "Electronic equipments",
+                                //     style: TextStyle(
+                                //       fontSize: 13.sp,
+                                //       fontWeight: FontWeight.w400,
+                                //     )
+                                // )
+
+                              ],
+                            ),
+                          )
+
+                        ],
+
+                      ),
+                    ),
+                    SizedBox(
+                      height: 135.h,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: img.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            width: 130.w,
+                            height: 180.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16),
+                                color:  Color(0xff222232)),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                  child: Image.asset(
+                                    img[index],
+                                    width: 56.w,
+                                    height: 56.h,
+                                  ),
+                                ),
+                                Text(name[index],
+                                    style: TextStyle(
+                                      fontSize: 18.sp,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600,
+                                    )),
+                                SizedBox(
+                                  width: 120.w,
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            width: 14.w,
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+
+
+
+
+
+
+
+            ],
           ),
         ),
       ),
