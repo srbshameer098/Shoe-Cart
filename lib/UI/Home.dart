@@ -30,7 +30,14 @@ List<String> name = [
   'Mobiles',
   'Wallets'
 ];
-
+List<String> per = [
+  '-25%',
+  '-25%',
+  '-25%',
+  '-25% ',
+  '-25%',
+  '-25%'
+];
 
 
 int selectedIndex = -1;
@@ -217,7 +224,7 @@ class _HomeState extends State<Home> {
               Container(
 
                 width: 375.w,
-                height: 253.h,
+                height: 283.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
                     color:  Color(0xffffffff)),
@@ -265,17 +272,18 @@ class _HomeState extends State<Home> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SizedBox(
-                        height: 160.h,
+                        height: 180.h,
                         child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemCount: img.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Container(
                               width: 160.w,
-                              height: 210.h,
+                              height: 220.h,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
-                                  color: Color(0xff222232)),
+                                  border: Border.all(width: 0.5,color: Colors.grey),
+                                  color: Color(0xffffffff)),
                               child: Column(
                                 children: [
                                   Padding(
@@ -289,9 +297,25 @@ class _HomeState extends State<Home> {
                                   Text(name[index],
                                       style: TextStyle(
                                         fontSize: 13.sp,
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontWeight: FontWeight.w400,
                                       )),
+                                  SizedBox(height:10.h ,),
+                                  Container(
+                                    width: 61.w,
+                                  height: 28,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(29),
+                                        color: Color(0xffecc7b5)),
+                                    child: Center(
+                                      child: Text(per[index],
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          )
+                                      ),
+                                    ),
+                                  ),
                                   SizedBox(
                                     width: 120.w,
                                   ),
@@ -323,16 +347,17 @@ class _HomeState extends State<Home> {
               Container(
 
                 width: 375.w,
-                height: 210.h,
+                height: 283.h,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(6),
                     color:  Color(0xffffffff)),
 
 
 
                 child: Column(
                   children: [
-                    SizedBox(height:60.h,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
 
                         children: [
@@ -341,10 +366,9 @@ class _HomeState extends State<Home> {
                             child: Column(
                               children: [
 
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                Center(
                                   child: Text(
-                                      "Home and outdoor",
+                                      "Deals and offers",
                                       style: TextStyle(
                                         fontSize: 18.sp,
                                         fontWeight: FontWeight.w600,
@@ -352,13 +376,13 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
 
-                                // Text(
-                                //     "Electronic equipments",
-                                //     style: TextStyle(
-                                //       fontSize: 13.sp,
-                                //       fontWeight: FontWeight.w400,
-                                //     )
-                                // )
+                                Text(
+                                    "Electronic equipments",
+                                    style: TextStyle(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w400,
+                                    )
+                                )
 
                               ],
                             ),
@@ -368,46 +392,66 @@ class _HomeState extends State<Home> {
 
                       ),
                     ),
-                    SizedBox(
-                      height: 135.h,
-                      child: ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: img.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            width: 130.w,
-                            height: 180.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color:  Color(0xff222232)),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                  child: Image.asset(
-                                    img[index],
-                                    width: 56.w,
-                                    height: 56.h,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 180.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: img.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              width: 160.w,
+                              height: 220.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  border: Border.all(width: 0.5,color: Colors.grey),
+                                  color: Color(0xffffffff)),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                    child: Image.asset(
+                                      img[index],
+                                      width: 76.65777587890625.w,
+                                      height: 83.19111633300781.h,
+                                    ),
                                   ),
-                                ),
-                                Text(name[index],
-                                    style: TextStyle(
-                                      fontSize: 18.sp,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                    )),
-                                SizedBox(
-                                  width: 120.w,
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                        separatorBuilder: (BuildContext context, int index) {
-                          return SizedBox(
-                            width: 14.w,
-                          );
-                        },
+                                  Text(name[index],
+                                      style: TextStyle(
+                                        fontSize: 13.sp,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                      )),
+                                  SizedBox(height:10.h ,),
+                                  Container(
+                                    width: 61.w,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(29),
+                                        color: Color(0xffecc7b5)),
+                                    child: Center(
+                                      child: Text(per[index],
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          )
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 120.w,
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return SizedBox(
+                              width: 14.w,
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ],
@@ -427,16 +471,17 @@ class _HomeState extends State<Home> {
               Container(
 
                 width: 375.w,
-                height: 210.h,
+                height: 283.h,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(6),
                     color:  Color(0xffffffff)),
 
 
 
                 child: Column(
                   children: [
-                    SizedBox(height:60.h,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
 
                         children: [
@@ -445,10 +490,9 @@ class _HomeState extends State<Home> {
                             child: Column(
                               children: [
 
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                Center(
                                   child: Text(
-                                      "Consumer electronics",
+                                      "Deals and offers",
                                       style: TextStyle(
                                         fontSize: 18.sp,
                                         fontWeight: FontWeight.w600,
@@ -456,13 +500,13 @@ class _HomeState extends State<Home> {
                                   ),
                                 ),
 
-                                // Text(
-                                //     "Electronic equipments",
-                                //     style: TextStyle(
-                                //       fontSize: 13.sp,
-                                //       fontWeight: FontWeight.w400,
-                                //     )
-                                // )
+                                Text(
+                                    "Electronic equipments",
+                                    style: TextStyle(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w400,
+                                    )
+                                )
 
                               ],
                             ),
@@ -472,46 +516,66 @@ class _HomeState extends State<Home> {
 
                       ),
                     ),
-                    SizedBox(
-                      height: 135.h,
-                      child: ListView.separated(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: img.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            width: 130.w,
-                            height: 180.h,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color:  Color(0xff222232)),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                  child: Image.asset(
-                                    img[index],
-                                    width: 56.w,
-                                    height: 56.h,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 180.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: img.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              width: 160.w,
+                              height: 220.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  border: Border.all(width: 0.5,color: Colors.grey),
+                                  color: Color(0xffffffff)),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                    child: Image.asset(
+                                      img[index],
+                                      width: 76.65777587890625.w,
+                                      height: 83.19111633300781.h,
+                                    ),
                                   ),
-                                ),
-                                Text(name[index],
-                                    style: TextStyle(
-                                      fontSize: 18.sp,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w600,
-                                    )),
-                                SizedBox(
-                                  width: 120.w,
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                        separatorBuilder: (BuildContext context, int index) {
-                          return SizedBox(
-                            width: 14.w,
-                          );
-                        },
+                                  Text(name[index],
+                                      style: TextStyle(
+                                        fontSize: 13.sp,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                      )),
+                                  SizedBox(height:10.h ,),
+                                  Container(
+                                    width: 61.w,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(29),
+                                        color: Color(0xffecc7b5)),
+                                    child: Center(
+                                      child: Text(per[index],
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          )
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 120.w,
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return SizedBox(
+                              width: 14.w,
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ],
