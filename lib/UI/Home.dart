@@ -1,3 +1,5 @@
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Home extends StatefulWidget {
@@ -7,6 +9,28 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
+
+
+List<String> img = [
+  'assets/soccer.png',
+  'assets/basketball.png',
+  'assets/football.png',
+  'assets/baseball.png',
+  'assets/tennis.png',
+  'assets/volly.png'
+];                //_________________  Banner  ______________________
+List<String> name = [
+  'Soccer',
+  'Basketball',
+  'Football',
+  'Baseball',
+  'Tennis',
+  'Volleyball'
+];
+
+
+
+int selectedIndex = -1;
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
@@ -96,7 +120,391 @@ SizedBox(width: 10.w,),
                     ),
 
                   ],
-                )
+                ),
+
+                SizedBox(height: 10.h,),
+                Container(
+                  width: 375,
+                  height: 172,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: Color(0xff0f0f1c)),
+                  child: ListView(
+                    children: [
+                      CarouselSlider(
+                        items: [
+                          //1st Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Image.asset(
+                              "assets/bimg1.png",
+                            ),
+                          ),
+
+                          //2nd Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Image.asset("assets/bimg1.png"),
+                          ),
+
+                          //3rd Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: Image.asset("assets/bimg1.png"),
+                          ),
+                        ],
+
+                        //Slider Container properties
+                        options: CarouselOptions(
+                          height: 170.0,
+                          enlargeCenterPage: true,
+                          autoPlay: true,
+                          aspectRatio: 16 / 9,
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enableInfiniteScroll: true,
+                          autoPlayAnimationDuration: Duration(milliseconds: 800),
+                          viewportFraction: 1.5,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+
+SizedBox(height: 15.h,),
+
+                Container(
+
+                  width: 375.w,
+                  height: 210.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color:  Color(0xffffffff)),
+
+
+
+                  child: Column(
+                    children: [
+                      Row(
+
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+
+                                Text(
+                                    "Deals and offers",
+                                    style: TextStyle(
+                                      fontSize: 18.sp,
+                                      fontWeight: FontWeight.w600,
+                                    )
+                                ),
+
+                                Text(
+                                    "Electronic equipments",
+                                    style: TextStyle(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w400,
+                                    )
+                                )
+
+                              ],
+                            ),
+                          )
+
+                        ],
+
+                      ),
+                      SizedBox(
+                        height: 135.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: img.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedIndex = index;
+                                });
+                              },
+                              child: Container(
+                                width: 130.w,
+                                height: 180.h,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    color: selectedIndex == index
+                                        ? Color(0xffe88a64)
+                                        : Color(0xff222232)),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                      child: Image.asset(
+                                        img[index],
+                                        width: 56.w,
+                                        height: 56.h,
+                                      ),
+                                    ),
+                                    Text(name[index],
+                                        style: TextStyle(
+                                          fontSize: 18.sp,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                        )),
+                                    SizedBox(
+                                      width: 120.w,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return SizedBox(
+                              width: 14.w,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+
+
+
+
+
+
+
+                SizedBox(height: 15.h,),
+
+                Container(
+
+                  width: 375.w,
+                  height: 210.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color:  Color(0xffffffff)),
+
+
+
+                  child: Column(
+                    children: [
+                      SizedBox(height:60.h,
+                        child: Row(
+
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                        "Home and outdoor",
+                                        style: TextStyle(
+                                          fontSize: 18.sp,
+                                          fontWeight: FontWeight.w600,
+                                        )
+                                    ),
+                                  ),
+
+                                  // Text(
+                                  //     "Electronic equipments",
+                                  //     style: TextStyle(
+                                  //       fontSize: 13.sp,
+                                  //       fontWeight: FontWeight.w400,
+                                  //     )
+                                  // )
+
+                                ],
+                              ),
+                            )
+
+                          ],
+
+                        ),
+                      ),
+                      SizedBox(
+                        height: 135.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: img.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedIndex = index;
+                                });
+                              },
+                              child: Container(
+                                width: 130.w,
+                                height: 180.h,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    color: selectedIndex == index
+                                        ? Color(0xffe88a64)
+                                        : Color(0xff222232)),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                      child: Image.asset(
+                                        img[index],
+                                        width: 56.w,
+                                        height: 56.h,
+                                      ),
+                                    ),
+                                    Text(name[index],
+                                        style: TextStyle(
+                                          fontSize: 18.sp,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                        )),
+                                    SizedBox(
+                                      width: 120.w,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return SizedBox(
+                              width: 14.w,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+
+
+
+
+
+
+
+
+                SizedBox(height: 15.h,),
+
+                Container(
+
+                  width: 375.w,
+                  height: 210.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color:  Color(0xffffffff)),
+
+
+
+                  child: Column(
+                    children: [
+                      SizedBox(height:60.h,
+                        child: Row(
+
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                        "Consumer electronics",
+                                        style: TextStyle(
+                                          fontSize: 18.sp,
+                                          fontWeight: FontWeight.w600,
+                                        )
+                                    ),
+                                  ),
+
+                                  // Text(
+                                  //     "Electronic equipments",
+                                  //     style: TextStyle(
+                                  //       fontSize: 13.sp,
+                                  //       fontWeight: FontWeight.w400,
+                                  //     )
+                                  // )
+
+                                ],
+                              ),
+                            )
+
+                          ],
+
+                        ),
+                      ),
+                      SizedBox(
+                        height: 135.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: img.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  selectedIndex = index;
+                                });
+                              },
+                              child: Container(
+                                width: 130.w,
+                                height: 180.h,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    color: selectedIndex == index
+                                        ? Color(0xffe88a64)
+                                        : Color(0xff222232)),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                      child: Image.asset(
+                                        img[index],
+                                        width: 56.w,
+                                        height: 56.h,
+                                      ),
+                                    ),
+                                    Text(name[index],
+                                        style: TextStyle(
+                                          fontSize: 18.sp,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                        )),
+                                    SizedBox(
+                                      width: 120.w,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return SizedBox(
+                              width: 14.w,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+
+
+
 
 
 
