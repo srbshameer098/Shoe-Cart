@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
     return  DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: Color(0xffc3dcf1),
+        backgroundColor: Color(0xffe5fbff),
       appBar: AppBar(
         backgroundColor: Color(0xff13161c),
         elevation: 1,
@@ -155,10 +155,10 @@ class _HomeState extends State<Home> {
 
               Center(
                 child: Container(
-                  width: 360,
-                  height: 175,
+                  width: 360.w,
+                  height: 175.h,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10.r),
                       color: Color(0xffffffff)),
                   child: ListView(
                     children: [
@@ -167,12 +167,12 @@ class _HomeState extends State<Home> {
                           //1st Image of Slider
                           Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(0),
+                              borderRadius: BorderRadius.circular(0.r),
                             ),
                             child: Image.asset(
                               "assets/banner.png",
-                              width: 360,
-                              height: 175,fit: BoxFit.fill,
+                              width: 360.w,
+                              height: 175.h,fit: BoxFit.fill,
                             ),
                           ),
 
@@ -226,7 +226,7 @@ class _HomeState extends State<Home> {
                 width: 375.w,
                 height: 283.h,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
+                    borderRadius: BorderRadius.circular(0),
                     color:  Color(0xffffffff)),
 
 
@@ -281,7 +281,7 @@ class _HomeState extends State<Home> {
                               width: 160.w,
                               height: 220.h,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
+                                  borderRadius: BorderRadius.circular(0),
                                   border: Border.all(width: 0.5,color: Colors.grey),
                                   color: Color(0xffffffff)),
                               child: Column(
@@ -325,7 +325,7 @@ class _HomeState extends State<Home> {
                           },
                           separatorBuilder: (BuildContext context, int index) {
                             return SizedBox(
-                              width: 14.w,
+                              width: 0.w,
                             );
                           },
                         ),
