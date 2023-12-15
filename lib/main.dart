@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:untitled1/UI/Bottomnav.dart';
 
 import 'UI/Home.dart';
 
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: Home(),
+            home: BottomNav(),
           );
 
 

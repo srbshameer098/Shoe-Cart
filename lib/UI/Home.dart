@@ -18,7 +18,7 @@ List<String> img = [
   'assets/7.png',
   'assets/image 86.png',
   'assets/image 34.png',
-  'assets/21.png',
+  'assets/2 1.png',
   'assets/image 24.png',
   'assets/image 26.png'
 ];                //_________________  Banner  ______________________
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
     return  DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: Color(0xffe5fbff),
+        backgroundColor: Color(0xff87c6fa),
       appBar: AppBar(
         backgroundColor: Color(0xff13161c),
         elevation: 1,
@@ -153,6 +153,10 @@ class _HomeState extends State<Home> {
 
               SizedBox(height: 10.h,),
 
+
+              // ----------------------  banner 1  -------------------------------//
+
+
               Center(
                 child: Container(
                   width: 360.w,
@@ -167,7 +171,8 @@ class _HomeState extends State<Home> {
                           //1st Image of Slider
                           Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(0.r),
+                              borderRadius: BorderRadius.circular(0
+                                  .r),
                             ),
                             child: Image.asset(
                               "assets/banner.png",
@@ -182,7 +187,7 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(0),
                             ),
                             child: Image.asset(
-                              "assets/banner.png",
+                              "assets/banner2.jpg",
                               width: 360,
                               height: 175,fit: BoxFit.fill,
                             ),
@@ -194,11 +199,37 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(0),
                             ),
                             child: Image.asset(
-                              "assets/banner.png",
+                              "assets/banner3.jpg",
                               width: 360,
                               height: 175,fit: BoxFit.fill,
                             ),
                           ),
+
+                          //3rd Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Image.asset(
+                              "assets/banner4.jpg",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
+                            ),
+                          ),
+
+                          //3rd Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Image.asset(
+                              "assets/banner5.jpg",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
+                            ),
+                          ),
+
+
                         ],
 
                         //Slider Container properties
@@ -219,127 +250,7 @@ class _HomeState extends State<Home> {
               ),
 
 
-          SizedBox(height: 15.h,),
-
-              Container(
-
-                width: 375.w,
-                height: 283.h,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(0),
-                    color:  Color(0xffffffff)),
-
-
-
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-
-                                Center(
-                                  child: Text(
-                                      "Deals and offers",
-                                      style: TextStyle(
-                                        fontSize: 18.sp,
-                                        fontWeight: FontWeight.w600,
-                                      )
-                                  ),
-                                ),
-
-                                Text(
-                                    "Electronic equipments",
-                                    style: TextStyle(
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w400,
-                                    )
-                                )
-
-                              ],
-                            ),
-                          )
-
-                        ],
-
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: 180.h,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: img.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              width: 160.w,
-                              height: 220.h,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(0),
-                                  border: Border.all(width: 0.5,color: Colors.grey),
-                                  color: Color(0xffffffff)),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                    child: Image.asset(
-                                      img[index],
-                                      width: 76.65777587890625.w,
-                                      height: 83.19111633300781.h,
-                                    ),
-                                  ),
-                                  Text(name[index],
-                                      style: TextStyle(
-                                        fontSize: 13.sp,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                      )),
-                                  SizedBox(height:10.h ,),
-                                  Container(
-                                    width: 61.w,
-                                  height: 28,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(29),
-                                        color: Color(0xffecc7b5)),
-                                    child: Center(
-                                      child: Text(per[index],
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                          )
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 120.w,
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                          separatorBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                              width: 0.w,
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-
-
-
-
-
+              // ------------------------------------------  Container 1  ---------------------------- //
 
 
               SizedBox(height: 15.h,),
@@ -347,7 +258,7 @@ class _HomeState extends State<Home> {
               Container(
 
                 width: 375.w,
-                height: 283.h,
+                height: 298.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
                     color:  Color(0xffffffff)),
@@ -368,7 +279,7 @@ class _HomeState extends State<Home> {
 
                                 Center(
                                   child: Text(
-                                      "Deals and offers",
+                                      "Deals and offers0",
                                       style: TextStyle(
                                         fontSize: 18.sp,
                                         fontWeight: FontWeight.w600,
@@ -395,17 +306,17 @@ class _HomeState extends State<Home> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SizedBox(
-                        height: 180.h,
+                        height: 190.h,
                         child: ListView.separated(
                           scrollDirection: Axis.horizontal,
                           itemCount: img.length,
                           itemBuilder: (BuildContext context, int index) {
                             return Container(
-                              width: 160.w,
+                              width: 155.w,
                               height: 220.h,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(width: 0.5,color: Colors.grey),
+                                  border: Border.all(width: 1,color: Colors.grey),
                                   color: Color(0xffffffff)),
                               child: Column(
                                 children: [
@@ -461,7 +372,7 @@ class _HomeState extends State<Home> {
 
 
 
-
+              // ------------------------------------------  Container 2  ---------------------------- //
 
 
 
@@ -492,7 +403,7 @@ class _HomeState extends State<Home> {
 
                                 Center(
                                   child: Text(
-                                      "Deals and offers",
+                                      "Deals and offers0",
                                       style: TextStyle(
                                         fontSize: 18.sp,
                                         fontWeight: FontWeight.w600,
@@ -529,7 +440,225 @@ class _HomeState extends State<Home> {
                               height: 220.h,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(width: 0.5,color: Colors.grey),
+                                  border: Border.all(width: 1,color: Colors.grey),
+                                  color: Color(0xffffffff)),
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                    child: Image.asset(
+                                      img[index],
+                                      width: 76.65777587890625.w,
+                                      height: 83.19111633300781.h,
+                                    ),
+                                  ),
+                                  Text(name[index],
+                                      style: TextStyle(
+                                        fontSize: 13.sp,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                      )),
+                                  SizedBox(height:10.h ,),
+                                  Container(
+                                    width: 61.w,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(29),
+                                        color: Color(0xffecc7b5)),
+                                    child: Center(
+                                      child: Text(per[index],
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                          )
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 120.w,
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return SizedBox(
+                              width: 14.w,
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // ----------------------  banner 2  -------------------------------//
+
+              Center(
+                child: Container(
+                  width: 360.w,
+                  height: 175.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.r),
+                      color: Color(0xffffffff)),
+                  child: ListView(
+                    children: [
+                      CarouselSlider(
+                        items: [
+                          //1st Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(0.r),
+                            ),
+                            child: Image.asset(
+                              "assets/banner.png",
+                              width: 360.w,
+                              height: 175.h,fit: BoxFit.fill,
+                            ),
+                          ),
+
+                          //2nd Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Image.asset(
+                              "assets/banner2.jpg",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
+                            ),
+                          ),
+
+                          //3rd Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Image.asset(
+                              "assets/banner3.jpg",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
+                            ),
+                          ),
+
+                          //3rd Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Image.asset(
+                              "assets/banner4.jpg",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
+                            ),
+                          ),
+
+                          //3rd Image of Slider
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                            child: Image.asset(
+                              "assets/banner5.jpg",
+                              width: 360,
+                              height: 175,fit: BoxFit.fill,
+                            ),
+                          ),
+
+
+                        ],
+
+                        //Slider Container properties
+                        options: CarouselOptions(
+                          height: 175.0,
+                          enlargeCenterPage: true,
+                          autoPlay: true,
+                          aspectRatio: 16 / 9,
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enableInfiniteScroll: true,
+                          autoPlayAnimationDuration: Duration(milliseconds: 800),
+                          viewportFraction: 1,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+
+
+              // ------------------------------------------  Container 3  ---------------------------- //
+
+
+
+
+              SizedBox(height: 15.h,),
+
+              Container(
+
+                width: 375.w,
+                height: 283.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+
+                    color:  Color(0xffffffff)),
+
+
+
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: [
+
+                                Center(
+                                  child: Text(
+                                      "Deals and offers0",
+                                      style: TextStyle(
+                                        fontSize: 18.sp,
+                                        fontWeight: FontWeight.w600,
+                                      )
+                                  ),
+                                ),
+
+                                Text(
+                                    "Electronic equipments",
+                                    style: TextStyle(
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w400,
+                                    )
+                                )
+
+                              ],
+                            ),
+                          )
+
+                        ],
+
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 180.h,
+                        child: ListView.separated(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: img.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              width: 160.w,
+                              height: 220.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+
+                                  border: Border.all(width: 1,color: Colors.grey),
                                   color: Color(0xffffffff)),
                               child: Column(
                                 children: [
