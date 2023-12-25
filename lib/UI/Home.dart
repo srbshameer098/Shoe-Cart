@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled1/UI/Accessory.dart';
 import 'package:untitled1/UI/Cloths.dart';
 import 'package:untitled1/UI/Gadgets.dart';
+
+import 'Page1.dart';
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -15,15 +17,31 @@ class Home extends StatefulWidget {
 
 
 List<String> img = [
-  'assets/7.png',
-  'assets/image 86.png',
-  'assets/image 34.png',
-  'assets/2 1.png',
-  'assets/image 24.png',
-  'assets/image 26.png'
+  'assets/puma1.webp',
+  'assets/adidas1.webp',
+  'assets/nike1.webp',
+  'assets/reebok1.webp',
+  'assets/woodland1.webp',
+  'assets/converse1.webp'
 ];
 
+List<String> img1 = [
+  'assets/puma2.webp',
+  'assets/adidas2.webp',
+  'assets/nike2.webp',
+  'assets/reebok2.webp',
+  'assets/woodland2.webp',
+  'assets/converse2.webp'
+];
 
+List<String> img2 = [
+  'assets/puma3.webp',
+  'assets/adidas3.webp',
+  'assets/nike3.webp',
+  'assets/reebok3.webp',
+  'assets/woodland3.webp',
+  'assets/converse3.webp'
+];
 
 
 
@@ -49,12 +67,12 @@ List<String> per = [
 ];
 
 List<String> puma = [
-  'assets/7.png',
-  'assets/image 86.png',
-  'assets/image 34.png',
-  'assets/2 1.png',
-  'assets/image 24.png',
-  'assets/image 26.png'
+  'assets/puma1.png',
+  'assets/puma2.png',
+  'assets/puma3.png',
+  'assets/puma4.png',
+  'assets/puma5.png',
+  'assets/puma6.png'
 ];
 
 List<String> adidas = [
@@ -317,6 +335,7 @@ class _HomeState extends State<Home> {
 
                         //Slider Container properties
                         options: CarouselOptions(
+
                           height: 175.0,
                           enlargeCenterPage: true,
                           autoPlay: true,
@@ -388,66 +407,74 @@ class _HomeState extends State<Home> {
 
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: 190.h,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: img.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              width: 155.w,
-                              height: 220.h,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(width: 1,color: Colors.grey),
-                                  color: Color(0xffffffff)),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                    child: Image.asset(
-                                      img[index],
-                                      width: 76.65777587890625.w,
-                                      height: 83.19111633300781.h,
-                                    ),
-                                  ),
-                                  Text(name[index],
-                                      style: TextStyle(
-                                        fontSize: 13.sp,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (builder)=>Page1()
+                        ));
+                      },
 
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w500,
-                                      )),
-                                  SizedBox(height:10.h ,),
-                                  Container(
-                                    width: 61.w,
-                                    height: 28,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(29),
-                                        color: Color(0xffecc7b5)),
-                                    child: Center(
-                                      child: Text(per[index],
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                          )
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          height: 190.h,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: img.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                width: 155.w,
+                                height: 220.h,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(width: 1,color: Colors.grey),
+                                    color: Color(0xffffffff)),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                      child: Image.asset(
+                                        img[index],
+                                        width: 76.65777587890625.w,
+                                        height: 83.19111633300781.h,
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 120.w,
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                          separatorBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                              width: 14.w,
-                            );
-                          },
+                                    Text(name[index],
+                                        style: TextStyle(
+                                          fontSize: 13.sp,
+
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w500,
+                                        )),
+                                    SizedBox(height:10.h ,),
+                                    Container(
+                                      width: 61.w,
+                                      height: 28,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(29),
+                                          color: Color(0xffecc7b5)),
+                                      child: Center(
+                                        child: Text(per[index],
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            )
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 120.w,
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                            separatorBuilder: (BuildContext context, int index) {
+                              return SizedBox(
+                                width: 14.w,
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ),
@@ -515,65 +542,72 @@ class _HomeState extends State<Home> {
 
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: 180.h,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: img.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              width: 160.w,
-                              height: 220.h,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  border: Border.all(width: 1,color: Colors.grey),
-                                  color: Color(0xffffffff)),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                    child: Image.asset(
-                                      img[index],
-                                      width: 76.65777587890625.w,
-                                      height: 83.19111633300781.h,
-                                    ),
-                                  ),
-                                  Text(name[index],
-                                      style: TextStyle(
-                                        fontSize: 13.sp,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                      )),
-                                  SizedBox(height:10.h ,),
-                                  Container(
-                                    width: 61.w,
-                                    height: 28,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(29),
-                                        color: Color(0xffecc7b5)),
-                                    child: Center(
-                                      child: Text(per[index],
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                          )
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (builder)=>Page1()
+                        ));
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          height: 180.h,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: img1.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                width: 160.w,
+                                height: 220.h,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
+                                    border: Border.all(width: 1,color: Colors.grey),
+                                    color: Color(0xffffffff)),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                      child: Image.asset(
+                                        img1[index],
+                                        width: 76.65777587890625.w,
+                                        height: 83.19111633300781.h,
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 120.w,
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                          separatorBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                              width: 14.w,
-                            );
-                          },
+                                    Text(name[index],
+                                        style: TextStyle(
+                                          fontSize: 13.sp,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w400,
+                                        )),
+                                    SizedBox(height:10.h ,),
+                                    Container(
+                                      width: 61.w,
+                                      height: 28,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(29),
+                                          color: Color(0xffecc7b5)),
+                                      child: Center(
+                                        child: Text(per[index],
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            )
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 120.w,
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                            separatorBuilder: (BuildContext context, int index) {
+                              return SizedBox(
+                                width: 14.w,
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ),
@@ -737,66 +771,73 @@ class _HomeState extends State<Home> {
 
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: 180.h,
-                        child: ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: img.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                              width: 160.w,
-                              height: 220.h,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (builder)=>Page1()
+                        ));
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          height: 180.h,
+                          child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: img2.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                width: 160.w,
+                                height: 220.h,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(16),
 
-                                  border: Border.all(width: 1,color: Colors.grey),
-                                  color: Color(0xffffffff)),
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                    child: Image.asset(
-                                      img[index],
-                                      width: 76.65777587890625.w,
-                                      height: 83.19111633300781.h,
-                                    ),
-                                  ),
-                                  Text(name[index],
-                                      style: TextStyle(
-                                        fontSize: 13.sp,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w400,
-                                      )),
-                                  SizedBox(height:10.h ,),
-                                  Container(
-                                    width: 61.w,
-                                    height: 28,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(29),
-                                        color: Color(0xffecc7b5)),
-                                    child: Center(
-                                      child: Text(per[index],
-                                          style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                          )
+                                    border: Border.all(width: 1,color: Colors.grey),
+                                    color: Color(0xffffffff)),
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                                      child: Image.asset(
+                                        img2[index],
+                                        width: 76.65777587890625.w,
+                                        height: 83.19111633300781.h,
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 120.w,
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                          separatorBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                              width: 14.w,
-                            );
-                          },
+                                    Text(name[index],
+                                        style: TextStyle(
+                                          fontSize: 13.sp,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w400,
+                                        )),
+                                    SizedBox(height:10.h ,),
+                                    Container(
+                                      width: 61.w,
+                                      height: 28,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(29),
+                                          color: Color(0xffecc7b5)),
+                                      child: Center(
+                                        child: Text(per[index],
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            )
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 120.w,
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                            separatorBuilder: (BuildContext context, int index) {
+                              return SizedBox(
+                                width: 14.w,
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ),
