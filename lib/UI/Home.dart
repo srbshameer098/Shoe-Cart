@@ -21,22 +21,105 @@ List<String> img = [
   'assets/2 1.png',
   'assets/image 24.png',
   'assets/image 26.png'
-];                //_________________  Banner  ______________________
+];
+
+
+
+
+
 List<String> name = [
-  'Cloths',
-  'Headphones',
-  'Laptobs',
-  'Smart watches',
-  'Mobiles',
-  'Wallets'
+  'Puma',
+  'Adidas',
+  'Nike',
+  'Reebok',
+  'Woodland',
+  'Converse',
+  'Fila',
+  'Liberty'
 ];
 List<String> per = [
   '-25%',
-  '-25%',
-  '-25%',
-  '-25% ',
-  '-25%',
-  '-25%'
+  '-20%',
+  '-5%',
+  '-50% ',
+  '-30%',
+  '-35%',
+  '-30%',
+  '-35%'
+];
+
+List<String> puma = [
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/2 1.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
+];
+
+List<String> adidas = [
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/2 1.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
+];
+
+List<String> nike = [
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/2 1.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
+];
+
+
+List<String> reebok = [
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/2 1.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
+];
+
+
+List<String> woodland = [
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/2 1.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
+];
+
+List<String> converse = [
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/2 1.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
+];
+
+List<String> fila = [
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/2 1.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
+];
+
+List<String> liberty = [
+  'assets/7.png',
+  'assets/image 86.png',
+  'assets/image 34.png',
+  'assets/2 1.png',
+  'assets/image 24.png',
+  'assets/image 26.png'
 ];
 
 
@@ -163,7 +246,7 @@ class _HomeState extends State<Home> {
                   height: 175.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.r),
-                      color: Color(0xffffffff)),
+                      color: Colors.transparent),
                   child: ListView(
                     children: [
                       CarouselSlider(
@@ -261,7 +344,7 @@ class _HomeState extends State<Home> {
                 height: 298.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
-                    color:  Color(0xffffffff)),
+                    color:  Color(0xff000000)),
 
 
 
@@ -281,6 +364,7 @@ class _HomeState extends State<Home> {
                                   child: Text(
                                       "Deals and offers0",
                                       style: TextStyle(
+                                        color: Colors.white,
                                         fontSize: 18.sp,
                                         fontWeight: FontWeight.w600,
                                       )
@@ -290,6 +374,7 @@ class _HomeState extends State<Home> {
                                 Text(
                                     "Electronic equipments",
                                     style: TextStyle(
+                                      color: Colors.white,
                                       fontSize: 13.sp,
                                       fontWeight: FontWeight.w400,
                                     )
@@ -331,8 +416,9 @@ class _HomeState extends State<Home> {
                                   Text(name[index],
                                       style: TextStyle(
                                         fontSize: 13.sp,
+
                                         color: Colors.black,
-                                        fontWeight: FontWeight.w400,
+                                        fontWeight: FontWeight.w500,
                                       )),
                                   SizedBox(height:10.h ,),
                                   Container(
@@ -385,7 +471,7 @@ class _HomeState extends State<Home> {
                 height: 283.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
-                    color:  Color(0xffffffff)),
+                    color:  Color(0xff000000)),
 
 
 
@@ -405,6 +491,7 @@ class _HomeState extends State<Home> {
                                   child: Text(
                                       "Deals and offers0",
                                       style: TextStyle(
+                                        color: Colors.white,
                                         fontSize: 18.sp,
                                         fontWeight: FontWeight.w600,
                                       )
@@ -414,6 +501,7 @@ class _HomeState extends State<Home> {
                                 Text(
                                     "Electronic equipments",
                                     style: TextStyle(
+                                      color: Colors.white,
                                       fontSize: 13.sp,
                                       fontWeight: FontWeight.w400,
                                     )
@@ -493,6 +581,8 @@ class _HomeState extends State<Home> {
                 ),
               ),
 
+              SizedBox(height: 10.h,),
+
               // ----------------------  banner 2  -------------------------------//
 
               Center(
@@ -503,6 +593,7 @@ class _HomeState extends State<Home> {
                       borderRadius: BorderRadius.circular(10.r),
                       color: Color(0xffffffff)),
                   child: ListView(
+
                     children: [
                       CarouselSlider(
                         items: [
@@ -593,7 +684,7 @@ class _HomeState extends State<Home> {
 
 
 
-              SizedBox(height: 15.h,),
+              SizedBox(height: 10.h,),
 
               Container(
 
@@ -602,7 +693,7 @@ class _HomeState extends State<Home> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
 
-                    color:  Color(0xffffffff)),
+                    color:  Color(0xff000000)),
 
 
 
@@ -622,6 +713,7 @@ class _HomeState extends State<Home> {
                                   child: Text(
                                       "Deals and offers0",
                                       style: TextStyle(
+                                        color: Colors.white,
                                         fontSize: 18.sp,
                                         fontWeight: FontWeight.w600,
                                       )
@@ -631,6 +723,7 @@ class _HomeState extends State<Home> {
                                 Text(
                                     "Electronic equipments",
                                     style: TextStyle(
+                                      color: Colors.white,
                                       fontSize: 13.sp,
                                       fontWeight: FontWeight.w400,
                                     )
