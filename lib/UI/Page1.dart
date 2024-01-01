@@ -54,7 +54,7 @@ class _Page1State extends State<Page1> {
               },
               child: ListView.separated(
 
-                itemCount: img1.length,
+                itemCount: puma.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     width: 160.w,
@@ -67,12 +67,15 @@ class _Page1State extends State<Page1> {
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                            child: Image.asset(
-                              img1[index],
-                              width: 76.65777587890625.w,
-                              height: 83.19111633300781.h,
+                          SizedBox( width: 76.65777587890625.w,
+                            height: 83.19111633300781.h,
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
+                              child: Image.asset(
+                                puma[index],
+                                width: 76.65777587890625.w,
+                                height: 83.19111633300781.h,
+                              ),
                             ),
                           ),
                           Padding(
@@ -153,7 +156,7 @@ class _Page1State extends State<Page1> {
                                 Row(
                                   children: [
                                     Text(
-                                        "Free Shippings",
+                                        "Free Shipping",
                                         style: TextStyle(
                                           fontSize: 12.sp,
                                           color: Colors.green,

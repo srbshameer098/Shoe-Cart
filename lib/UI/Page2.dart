@@ -135,7 +135,7 @@ class _Page2State extends State<Page2> {
                 Row(
                   children: [
                     Text(
-                        "\$",
+                      "₹",
                         style: TextStyle(
                           fontSize: 20.sp,
                           color: Colors.red,
@@ -144,7 +144,7 @@ class _Page2State extends State<Page2> {
                     ),
                     SizedBox(width: 5.w,),
                     Text(
-                        "54.2",
+                        "5400.00",
                         style: TextStyle(
                           color: Colors.red,
                           fontSize: 20.sp,

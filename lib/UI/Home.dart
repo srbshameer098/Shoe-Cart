@@ -66,13 +66,13 @@ List<String> per = [
   '-35%'
 ];
 
-List<String> puma = [
-  'assets/puma1.png',
-  'assets/puma2.png',
-  'assets/puma3.png',
-  'assets/puma4.png',
-  'assets/puma5.png',
-  'assets/puma6.png'
+List<String>puma= [
+  'assets/puma1.webp',
+  'assets/puma2.webp',
+  'assets/puma3.webp',
+  'assets/puma4.webp',
+  'assets/puma5.webp',
+  'assets/puma6.webp'
 ];
 
 List<String> adidas = [
