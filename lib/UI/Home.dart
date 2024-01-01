@@ -174,85 +174,9 @@ class _HomeState extends State<Home> {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 40.h,
-                             decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: Text('All Category',style: TextStyle(
-                            color: Color(0xfd000000),
-                          ),),
-                        ),
-                      ),
-                    ),
-                          SizedBox(width: 10.w,),
-                    Container(
-                      height: 40.h,
-                      decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: GestureDetector(
-                            onTap: (){
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (_)=>Gadgets()));
-                            },
-                            child: Text('Gadgets',style: TextStyle(
-                              color: Color(0xfd000000),
-                            ),),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 10.w,),
-                    Container(
-                      height: 40.h,
-                      decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child:  GestureDetector(
-                            onTap: (){
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (_)=>Cloths()));
-                            },
-                            child: Text('Cloths',style: TextStyle(
-                              color: Color(0xfd000000),
-                            ),),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 10.w,),
-                    Container(
-                      height: 40.h,
-                      decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: GestureDetector(
-                            onTap: (){
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (_)=>Accessory()));
-                            },
-                            child: Text('Accessory',style: TextStyle(
-                              color: Color(0xfd000000),
-                            ),),
-                          ),
-                        ),
-                      ),
-                    ),
 
-                  ],
-                ),
-              ),
 
-              SizedBox(height: 10.h,),
+
 
 
               // ----------------------  banner 1  -------------------------------//
@@ -260,10 +184,10 @@ class _HomeState extends State<Home> {
 
               Center(
                 child: Container(
-                  width: 360.w,
+                  width: 375.w,
                   height: 175.h,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.r),
+                      borderRadius: BorderRadius.circular(0.r),
                       color: Colors.transparent),
                   child: ListView(
                     children: [
@@ -277,7 +201,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner.png",
-                              width: 360.w,
+                              width: 375.w,
                               height: 175.h,fit: BoxFit.fill,
                             ),
                           ),
@@ -289,7 +213,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner2.jpg",
-                              width: 360,
+                              width: 375,
                               height: 175,fit: BoxFit.fill,
                             ),
                           ),
@@ -301,7 +225,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner3.jpg",
-                              width: 360,
+                              width: 375,
                               height: 175,fit: BoxFit.fill,
                             ),
                           ),
@@ -313,7 +237,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner4.jpg",
-                              width: 360,
+                              width: 375,
                               height: 175,fit: BoxFit.fill,
                             ),
                           ),
@@ -325,7 +249,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner5.jpg",
-                              width: 360,
+                              width: 375,
                               height: 175,fit: BoxFit.fill,
                             ),
                           ),
@@ -335,12 +259,12 @@ class _HomeState extends State<Home> {
 
                         //Slider Container properties
                         options: CarouselOptions(
-
+                          animateToClosest: true,
                           height: 175.0,
                           enlargeCenterPage: true,
                           autoPlay: true,
                           aspectRatio: 16 / 9,
-                          autoPlayCurve: Curves.fastOutSlowIn,
+                          autoPlayCurve: Curves.ease,
                           enableInfiniteScroll: true,
                           autoPlayAnimationDuration: Duration(milliseconds: 800),
                           viewportFraction: 1,
@@ -351,18 +275,124 @@ class _HomeState extends State<Home> {
                 ),
               ),
 
+              // SizedBox(height: 10.h,),
+
+              Container( height: 50.h,width: 375.w,
+                decoration: BoxDecoration(color: Color(0xff000000), borderRadius: BorderRadius.circular(0.r),),
+                child: Padding(
+                  padding:  EdgeInsets.only(left: 10.w
+                  ),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 40.h,
+                          decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: Text('All Category',style: TextStyle(
+                                color: Color(0xfd000000),
+                              ),),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10.w,),
+                        Container(
+                          height: 40.h,
+                          decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context)
+                                      .push(MaterialPageRoute(builder: (_)=>Gadgets()));
+                                },
+                                child: Text('Puma',style: TextStyle(
+                                  color: Color(0xfd000000),
+                                ),),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10.w,),
+                        Container(
+                          height: 40.h,
+                          decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child:  GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context)
+                                      .push(MaterialPageRoute(builder: (_)=>Cloths()));
+                                },
+                                child: Text('Nike',style: TextStyle(
+                                  color: Color(0xfd000000),
+                                ),),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10.w,),
+                        Container(
+                          height: 40.h,
+                          decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context)
+                                      .push(MaterialPageRoute(builder: (_)=>Accessory()));
+                                },
+                                child: Text('Adidas',style: TextStyle(
+                                  color: Color(0xfd000000),
+                                ),),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(width: 10.w,),
+                        Container(
+                          height: 40.h,
+                          decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.circular(12.r),),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Center(
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.of(context)
+                                      .push(MaterialPageRoute(builder: (_)=>Accessory()));
+                                },
+                                child: Text('Reebok',style: TextStyle(
+                                  color: Color(0xfd000000),
+                                ),),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                      ],
+                    ),
+                  ),
+                ),
+              ),
 
               // ------------------------------------------  Container 1  ---------------------------- //
 
 
-              SizedBox(height: 15.h,),
+              SizedBox(height: 10.h,),
 
               Container(
 
                 width: 375.w,
                 height: 298.h,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
+                    borderRadius: BorderRadius.circular(0),
                     color:  Color(0xff000000)),
 
 
@@ -490,14 +520,14 @@ class _HomeState extends State<Home> {
 
 
 
-              SizedBox(height: 15.h,),
+              SizedBox(height: 10.h,),
 
               Container(
 
                 width: 375.w,
                 height: 283.h,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
+                    borderRadius: BorderRadius.circular(0),
                     color:  Color(0xff000000)),
 
 
@@ -615,17 +645,17 @@ class _HomeState extends State<Home> {
                 ),
               ),
 
-              SizedBox(height: 10.h,),
+              // SizedBox(height: 10.h,),
 
               // ----------------------  banner 2  -------------------------------//
 
               Center(
                 child: Container(
-                  width: 360.w,
+                  width: 375.w,
                   height: 175.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.r),
-                      color: Color(0xffffffff)),
+                      color: Colors.transparent),
                   child: ListView(
 
                     children: [
@@ -638,7 +668,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner.png",
-                              width: 360.w,
+                              width: 375.w,
                               height: 175.h,fit: BoxFit.fill,
                             ),
                           ),
@@ -650,7 +680,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner2.jpg",
-                              width: 360,
+                              width: 375,
                               height: 175,fit: BoxFit.fill,
                             ),
                           ),
@@ -674,7 +704,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner4.jpg",
-                              width: 360,
+                              width: 375,
                               height: 175,fit: BoxFit.fill,
                             ),
                           ),
@@ -686,7 +716,7 @@ class _HomeState extends State<Home> {
                             ),
                             child: Image.asset(
                               "assets/banner5.jpg",
-                              width: 360,
+                              width: 375,
                               height: 175,fit: BoxFit.fill,
                             ),
                           ),
@@ -718,14 +748,14 @@ class _HomeState extends State<Home> {
 
 
 
-              SizedBox(height: 10.h,),
+              // SizedBox(height: 10.h,),
 
               Container(
 
                 width: 375.w,
                 height: 283.h,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
+                    borderRadius: BorderRadius.circular(0),
 
                     color:  Color(0xff000000)),
 
@@ -740,12 +770,12 @@ class _HomeState extends State<Home> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Column(
+                            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
 
                                 Center(
                                   child: Text(
-                                      "Deals and offers0",
+                                      "Special offers",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.sp,
@@ -755,7 +785,7 @@ class _HomeState extends State<Home> {
                                 ),
 
                                 Text(
-                                    "Electronic equipments",
+                                    "Year end sale",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 13.sp,
@@ -845,7 +875,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
 
-
+SizedBox(height: 10.h,)
 
 
 
