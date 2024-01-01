@@ -153,7 +153,7 @@ class _Page1State extends State<Page1> {
                                 Row(
                                   children: [
                                     Text(
-                                        "Free Shipping",
+                                        "Free Shippings",
                                         style: TextStyle(
                                           fontSize: 12.sp,
                                           color: Colors.green,
