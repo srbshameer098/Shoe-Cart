@@ -10,6 +10,8 @@ class Page2 extends StatefulWidget {
 }
 
 class _Page2State extends State<Page2> {
+  bool value = false;
+  bool isVisible=false;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -48,11 +50,34 @@ class _Page2State extends State<Page2> {
               height: 290.h,
               decoration: BoxDecoration(
                   color: Color(0xffffffff)),
-              child:Image.asset(
-                'assets/nike5.webp',
-                // width: 150.w,height: 150.h,
-                fit: BoxFit.fill,
-              )
+              child:Stack(
+                children:[ Image.asset(
+                  'assets/nike5.webp',
+                  // width: 150.w,height: 150.h,
+                  fit: BoxFit.fill,
+                ),
+                  Positioned(left: 310.w,top: 10.h,
+                    child: CircleAvatar(radius: 25.r,backgroundColor: Colors.white,
+                      child: GestureDetector(onTap: (){
+                        setState((){
+                          isVisible=!isVisible;
+                        });
+                      },
+                          child:isVisible==true? Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                          ):Icon(
+                            Icons.favorite_border,
+                            color: Colors.black,
+                          )
+                      ),
+                    ),
+                  ),
+                  Positioned(left: 310.w,top: 70.h,
+                    child: CircleAvatar(radius: 25.r,backgroundColor: Colors.white,
+                        child: Icon(Icons.share_outlined,color: Colors.black,)),
+                  )
+              ])
           ),
           Padding(
             padding:  EdgeInsets.only(left: 12.w,right: 12.w,top: 15.h),
@@ -163,6 +188,23 @@ class _Page2State extends State<Page2> {
 
                   ],
                 ),
+
+                Row(
+                  children: [
+
+                 Padding(
+                   padding:  EdgeInsets.only(left: 90.w,top: 10.h),
+                   child: TextButton(onPressed: (){}, child: Container(
+                       width: 160.w,
+                       height: 40.h,
+                       decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(16),
+                           border: Border.all(width: 1,color: Colors.grey.shade900),
+                           color: Color(0xf52767f3)),
+                      child: Center(child: Text('Add To Cart',style: TextStyle(color: Colors.white),))),),
+                 )
+                  ],
+                )
 
 
             ],
