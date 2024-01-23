@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled1/UI/Bottomnav.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'UI/Splash_screen.dart';
 import 'firebase_options.dart';
 
 import 'UI/Home.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: BottomNav(),
+            home: SplashScreen(),
           );
 
 

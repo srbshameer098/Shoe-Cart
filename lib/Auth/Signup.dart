@@ -1,12 +1,12 @@
-import 'package:firebase/Auth/login_screen.dart';
-import 'package:firebase/Widgets/RoundButton.dart';
-import 'package:firebase/UI/utiles/Utils.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../Widgets/RoundButton.dart';
+import '../utiles/Utils.dart';
 import 'login_screen.dart';
 
 class Signup extends StatefulWidget {

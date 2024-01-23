@@ -1,10 +1,10 @@
-import 'package:firebase/Widgets/RoundButton.dart';
-import 'package:firebase/Auth/Verify_code.dart';
-import 'package:firebase/UI/utiles/Utils.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../Widgets/RoundButton.dart';
+import '../utiles/Utils.dart';
 import 'Verify_code.dart';
 
 class LogInWithPhoneNumber extends StatefulWidget {

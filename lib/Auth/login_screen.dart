@@ -1,8 +1,4 @@
-import 'package:firebase/UI/Home/Home_screen.dart';
-import 'package:firebase/Auth/Phone.dart';
-import 'package:firebase/Widgets/RoundButton.dart';
-import 'package:firebase/Auth/Signup.dart';
-import 'package:firebase/UI/utiles/Utils.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +6,10 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../UI/Bottomnav.dart';
 import '../UI/Home.dart';
+import '../Widgets/RoundButton.dart';
+import '../utiles/Utils.dart';
 import 'Phone.dart';
 import 'Signup.dart';
 
@@ -57,7 +56,7 @@ class _HomePageState extends State<HomePage> {
         .then((value) {
       Utils().toastMessage(value.user!.email.toString());
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Home()));
+          context, MaterialPageRoute(builder: (context) => BottomNav()));
       setState(() {
         loading = false;
       });
@@ -216,7 +215,7 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Home()));
+                                  builder: (context) => BottomNav()));
                           setState(() {
                             loading = false;
                           });

@@ -1,11 +1,13 @@
 import 'dart:async';
 
-import 'package:firebase/Auth/login_screen.dart';
-import 'package:firebase/UI/Home/Home_screen.dart';
+
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../Auth/login_screen.dart';
+import '../UI/Bottomnav.dart';
 import '../UI/Home.dart';
 
 class SplashServices {
@@ -18,12 +20,12 @@ class SplashServices {
       Timer(
           const Duration(seconds: 2),
           () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Home())));
+              context, MaterialPageRoute(builder: (context) => BottomNav())));
     } else {
       Timer(
           const Duration(seconds: 2),
           () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Home())));
+              context, MaterialPageRoute(builder: (context) => HomePage())));
     }
   }
 }

@@ -21,11 +21,18 @@ class _BottomNavState extends State<BottomNav> {
     return Scaffold (
       bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.black,currentIndex: currentIndex,onTap: (index){
         setState(() {
-          currengationBarItem(icon: Icon(Icons.category_outlined,color: Colors.black,), label: "Shop"),
-          BottomNavigationBarItem(icon:  Icon(Icons.shopping_cart_outlined,color: Colors.black), label: "Me"),
-          BottomNavigationBarItem(icon:  Icon(Icons.account_box_outlined,color: Colors.black), label: "Me"),
+          currentIndex=index;
+        });
+    },
+    items: [
 
-        ],
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black,), label: "Home"),
+          BottomNavigationBarItem(icon:  Icon(Icons.category_outlined,color: Colors.black), label: "Categories"),
+          BottomNavigationBarItem(icon:  Icon(Icons.shopping_cart_outlined,color: Colors.black), label: "Cart"),
+      BottomNavigationBarItem(icon:  Icon(Icons.perm_identity_outlined,color: Colors.black), label: "Account"),
+
+
+    ],
       ),body: screens[currentIndex],
 
     );

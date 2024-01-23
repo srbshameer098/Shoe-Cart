@@ -7,6 +7,7 @@ import 'package:untitled1/UI/Cloths.dart';
 import 'package:untitled1/UI/Gadgets.dart';
 
 import 'Page1.dart';
+bool loading = false;
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -64,6 +65,15 @@ List<String> per = [
   '-35%',
   '-30%',
   '-35%'
+];
+
+List<String>logo= [
+  'assets/puma.png',
+  'assets/adidas.png',
+  'assets/nike.png',
+  'assets/reebok.png',
+  'assets/woodland.png',
+  'assets/converse.png'
 ];
 
 List<String>puma= [
@@ -149,9 +159,9 @@ class _HomeState extends State<Home> {
     return  DefaultTabController(
       length: 4,
       child: Scaffold(
-        backgroundColor: Color(0xff87c6fa),
+        backgroundColor: Color(0xffffffff),
       appBar: AppBar(
-        backgroundColor: Color(0xff13161c),
+        backgroundColor: Color(0xfd000000),
         elevation: 1,
         leading: Icon(Icons.menu,color: Colors.white,),
         title: Container(
@@ -169,6 +179,7 @@ class _HomeState extends State<Home> {
         ),),
       ],
         )),
+        actions: [Icon(Icons.search_outlined,color: Colors.white,),SizedBox(width: 15.w,)],
       ),
         body:  SingleChildScrollView(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -280,7 +291,7 @@ class _HomeState extends State<Home> {
               Container( height: 50.h,width: 375.w,
                 decoration: BoxDecoration(color: Color(0xff000000), borderRadius: BorderRadius.circular(0.r),),
                 child: Padding(
-                  padding:  EdgeInsets.only(left: 10.w
+                  padding:  EdgeInsets.only(left: 10.w,top: 15.h
                   ),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -385,7 +396,7 @@ class _HomeState extends State<Home> {
               // ------------------------------------------  Container 1  ---------------------------- //
 
 
-              SizedBox(height: 10.h,),
+              // SizedBox(height: 10.h,),
 
               Container(
 
@@ -520,7 +531,7 @@ class _HomeState extends State<Home> {
 
 
 
-              SizedBox(height: 10.h,),
+              // SizedBox(height: 10.h,),
 
               Container(
 
@@ -546,7 +557,7 @@ class _HomeState extends State<Home> {
 
                                 Center(
                                   child: Text(
-                                      "Deals and offers0",
+                                      "Deals and offers 1",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18.sp,

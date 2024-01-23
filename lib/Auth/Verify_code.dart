@@ -1,11 +1,12 @@
-import 'package:firebase/UI/Home/Home_screen.dart';
-import 'package:firebase/UI/utiles/Utils.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../UI/Bottomnav.dart';
 import '../UI/Home.dart';
 import '../Widgets/RoundButton.dart';
+import '../utiles/Utils.dart';
 
 class Verify_code extends StatefulWidget {
   final String verificationId;
@@ -59,7 +60,7 @@ class _Verify_codeState extends State<Verify_code> {
 
                 await auth.signInWithCredential(credential);
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context)=> Home()));
+                    MaterialPageRoute(builder: (context)=> BottomNav()));
               }catch(e){
 
                 setState(() {
