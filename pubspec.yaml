@@ -46,6 +46,7 @@ dependencies:
   lottie: ^3.0.0
   firebase_database: ^10.4.0
   font_awesome_flutter: ^10.5.0
+  avatar_glow: ^3.0.1
 
 dev_dependencies:
   flutter_test:
