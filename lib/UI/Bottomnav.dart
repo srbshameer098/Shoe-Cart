@@ -6,7 +6,7 @@ import 'package:untitled1/UI/Categories.dart';
 
 import 'Home.dart';
 
-
+int currentIndex=0;
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
 
@@ -14,7 +14,7 @@ class BottomNav extends StatefulWidget {
   State<BottomNav> createState() => _BottomNavState();
 }
 final screens=[ Home(),Categories(),Cart(),Account()];
-int currentIndex=0;
+
 class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {

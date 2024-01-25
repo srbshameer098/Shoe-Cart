@@ -48,26 +48,25 @@ class _Page1State extends State<Page1> {
         
               child: Container(
         
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.push
-                      (context, MaterialPageRoute(builder: (builder)=>Page2()));
-                  },
-                  child: GridView.count(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 5,
-                      mainAxisSpacing: 5,
-                      childAspectRatio: 200 / 300,
-                      shrinkWrap: true,
-                    children:
-                      List.generate(
-        
-                        puma.length,
-                            (index) {
-        
-                        // ----------- Main container -----------------
-        
-                        return Container(
+                child: GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 5,
+                    mainAxisSpacing: 5,
+                    childAspectRatio: 200 / 300,
+                    shrinkWrap: true,
+                  children:
+                    List.generate(
+
+                      puma.length,
+                          (index) {
+
+                      // ----------- Main container -----------------
+
+                      return GestureDetector(onTap: (){
+                        Navigator.push
+                          (context, MaterialPageRoute(builder: (builder)=>Page2(image:puma ,)));
+                      },
+                        child: Container(
                           width: 140.w,
                           height: 200.h,
                           decoration: BoxDecoration(
@@ -78,9 +77,9 @@ class _Page1State extends State<Page1> {
                             padding: const EdgeInsets.all(8.0),
                             child: Column(crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-        
+
                                 // ------------ Image container  -----------------
-        
+
                                 Stack(
                                   children: [Container(
                                     width: 160.w,
@@ -88,7 +87,7 @@ class _Page1State extends State<Page1> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(16),
                                         // border: Border.all(width: 1,color: Colors.grey),
-                                        color: Color(0xfddad8d8)),
+                                        color: Color(0xfce5e5e5)),
                                     child: SizedBox( width: 76.65777587890625.w,
                                       height: 83.19111633300781.h,
                                       child: Padding(
@@ -101,7 +100,7 @@ class _Page1State extends State<Page1> {
                                       ),
                                     ),
                                   ),
-        
+
                                     Positioned(left: 119.w,top: 11.h,
                                       child: CircleAvatar(radius: 15.r,backgroundColor: Colors.black,
                                         child: GestureDetector(onTap: (){
@@ -119,8 +118,8 @@ class _Page1State extends State<Page1> {
                                         ),
                                       ),
                                     ),
-        
-        
+
+
                                 ]),
                                 SizedBox(height: 10.h,),
                                 Column(
@@ -133,7 +132,7 @@ class _Page1State extends State<Page1> {
                                             fontWeight: FontWeight.w500,
                                           )),
                                     ),
-        
+
                                     Padding(
                                       padding:  EdgeInsets.symmetric(horizontal: 55),
                                       child: SizedBox(width: 100,
@@ -157,7 +156,7 @@ class _Page1State extends State<Page1> {
                                         ),
                                       ),
                                     ),
-        
+
                                     Center(
                                       child: Text(
                                           "Free Shipping",
@@ -173,18 +172,18 @@ class _Page1State extends State<Page1> {
                                 // SizedBox(
                                 //   width: 120.w,
                                 // ),
-        
+
                               ],
                             ),
-        
+
                           ),
-                        );
-        
-                      },
-        
-                    ),
-        
+                        ),
+                      );
+
+                    },
+
                   ),
+
                 ),
         
               ),

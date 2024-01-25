@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Home.dart';
 
 class Page2 extends StatefulWidget {
-  const Page2({super.key});
+  final List<String> image;
+  const Page2({super.key,required this.image});
 
   @override
   State<Page2> createState() => _Page2State();
@@ -14,10 +15,12 @@ class _Page2State extends State<Page2> {
   bool value = false;
   bool isVisible = false;
 
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffdad9d9),
+        backgroundColor: Color(0xfce5e5e5),
       appBar: AppBar(
         backgroundColor: Color(0xffffffff),
         elevation: 1,
@@ -55,9 +58,10 @@ class _Page2State extends State<Page2> {
           Stack(children: [
             SizedBox(
               height: 310.h,
+              width: 200.w,
               child: Image.asset(
-                'assets/nike5.webp',
-                // width: 150.w,height: 150.h,
+                widget.image[0],
+                width: 150.w,height: 150.h,
                 fit: BoxFit.fill,
               ),
             ),
@@ -102,6 +106,7 @@ class _Page2State extends State<Page2> {
           // ----------- Main container -----------------
 
           Container(width: 370,
+            height: 400.h,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(40.0),

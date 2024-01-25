@@ -19,13 +19,13 @@ class SplashServices {
     if (user != null) {
       Timer(
           const Duration(seconds: 2),
-          () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => BottomNav())));
+          () => Navigator.pushAndRemoveUntil(
+              context, MaterialPageRoute(builder: (context) => BottomNav()), (Route<dynamic> route) => false));
     } else {
       Timer(
           const Duration(seconds: 2),
-          () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomePage())));
+          () => Navigator.pushAndRemoveUntil(
+              context, MaterialPageRoute(builder: (context) => HomePage()),(Route<dynamic> route) => false));
     }
   }
 }

@@ -77,7 +77,7 @@ List<String>logo= [
 ];
 
 List<String>puma= [
-  'assets/puma1.webp',
+  'assets/nike5.png',
   'assets/puma2.webp',
   'assets/puma3.webp',
   'assets/puma4.webp',
