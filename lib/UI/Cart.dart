@@ -117,7 +117,7 @@ class _CartState extends State<Cart> {
                                               borderRadius:
                                                   BorderRadius.circular(16),
                                               // border: Border.all(width: 1,color: Colors.grey),
-                                              color: Color(0xfddad8d8)),
+                                              color: Color(0xeaffffff)),
                                           child: SizedBox(
                                             width: 76.65777587890625.w,
                                             height: 83.19111633300781.h,
@@ -163,79 +163,44 @@ class _CartState extends State<Cart> {
                                           ],
                                         ),
 
+                                        // ---------- INC/Dec Container ------------- //
                                         Padding(
                                           padding: EdgeInsets.only(
-                                              left: 24.w, top: 0.h),
+                                              left: 24.w, top: 40.h),
                                           child: Container(
-                                            width: 115.w,
+                                            width: 109.w,
                                             height: 35.h,
                                             decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(30),
                                                 // border: Border.all(width: 1,color: Colors.grey),
-                                                color: Color(0xffffffff)),
-                                            child: Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 10),
+                                                color: Color(0xa1eaeaea)),
+                                            child: Row(
+                                              children: [
+
+
+                                                IconButton(
+                                                    onPressed:()
+                                                    {
+                                                      decrementCounter(index);;
+                                                    },
+                                                    icon: Icon(Icons.remove,size: 18,)),
+
+
+                                                Text(
+                                                  '${_counter[index]}',
+
+
+                                                ),
 
 
 
-
-
-                                              child: Row(
-                                                children: [
-                                                  SizedBox(
-                                                    height: 25,
-                                                    width: 25,
-                                                    child: FloatingActionButton(elevation: 0,
-                                                      onPressed:(){
-                                                        _incrementCounter(index);
-                                                      },
-
-                                                      tooltip: 'Increment',
-                                                      backgroundColor:
-                                                          Colors.white,
-                                                      child: Center(
-                                                        child: const Text(
-                                                          '+',
-                                                          style: TextStyle(
-                                                              fontSize: 20),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                  SizedBox(
-                                                    width: 30,
-                                                    child: Text(
-                                                      '${_counter[index]}',
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .headlineMedium,
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 25,
-                                                    width: 25,
-                                                    child: FloatingActionButton(elevation: 0,
-                                                      onPressed:
-                                                      (){decrementCounter(index);},
-                                                      tooltip: 'Decrement',
-                                                      backgroundColor:
-                                                          Colors.white,
-                                                      child: Center(
-                                                          child: Text(
-                                                        '-',
-                                                        style: TextStyle(
-                                                            fontSize: 26),
-                                                      )),
-                                                    ),
-
-
-
-                                                  ),
+                                                IconButton(
+                                                    onPressed:()
+                                                    {
+                                                      _incrementCounter(index);
+                                                    },
+                                                    icon: Icon(Icons.add,size: 18,)),
 
 
 
@@ -243,8 +208,7 @@ class _CartState extends State<Cart> {
 
 
 
-                                                ],
-                                              ),
+                                              ],
                                             ),
                                           ),
                                         )
