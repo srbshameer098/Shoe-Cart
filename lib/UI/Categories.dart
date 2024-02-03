@@ -50,25 +50,22 @@ class _CategoriesState extends State<Categories> {
                   itemCount: puma.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
-                      width: 100.w,
-                      height: 70.h,
+                      // width: 100.w,
+                      // height: 70.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
-                          border: Border.all(width: 1,color: Colors.grey),
+                           border: Border.all(width: 1,color: Colors.grey),
                           color: Color(0xfd000000)),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding:  EdgeInsets.symmetric(horizontal: 10.h),
                         child: Row(
                           children: [
                             SizedBox( width: 76.65777587890625.w,
                               height: 83.19111633300781.h,
-                              child: Padding(
-                                padding: EdgeInsets.only(top: 20.h, bottom: 12.h),
-                                child: Image.asset(
-                                  logo[index],
-                                  width: 76.65777587890625.w,
-                                  height: 83.19111633300781.h,
-                                ),
+                              child: Image.asset(
+                                logo[index],
+                                width: 76.65777587890625.w,
+                                height: 83.19111633300781.h,
                               ),
                             ),
                             SizedBox(width: 120.w,
@@ -82,13 +79,8 @@ class _CategoriesState extends State<Categories> {
 
                             SizedBox(width: 10.w,),
 
-                            Text('100',
-                                style: TextStyle(
-                              fontSize: 13.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            )),
-                            Text('Products',
+
+                            Text('${200} Products',
                                 style: TextStyle(
                               fontSize: 13.sp,
                               color: Colors.white,

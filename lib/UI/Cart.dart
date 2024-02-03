@@ -56,13 +56,13 @@ class _CartState extends State<Cart> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 20.h),
           child: Column(
             children: [
               // -------------- 1st Container  ------------------  //
 
               Container(
-                width: 334,
+                // width: 334,
                 height: 420,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
@@ -96,8 +96,8 @@ class _CartState extends State<Cart> {
                               // ----------- Main container -----------------
 
                               return Container(
-                                width: 300.w,
-                                height: 100.h,
+                                // width: 300.w,
+                                // height: 100.h,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(18),
                                     // border: Border.all(width: 1,color: Colors.grey),
@@ -111,8 +111,8 @@ class _CartState extends State<Cart> {
                                         // ------------ Image container  -----------------
 
                                         Container(
-                                          width: 70.w,
-                                          height: 80.h,
+                                          // width: 70.w,
+                                          // height: 80.h,
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(16),
@@ -120,14 +120,14 @@ class _CartState extends State<Cart> {
                                               color: Color(0xeaffffff)),
                                           child: SizedBox(
                                             width: 76.65777587890625.w,
-                                            height: 83.19111633300781.h,
+                                            // height: 83.19111633300781.h,
                                             child: Padding(
                                               padding: EdgeInsets.only(
                                                   top: 20.h, bottom: 12.h),
                                               child: Image.asset(
                                                 puma[index],
-                                                width: 76.65777587890625.w,
-                                                height: 83.19111633300781.h,
+                                                // width: 76.65777587890625.w,
+                                                // height: 83.19111633300781.h,
                                               ),
                                             ),
                                           ),
@@ -168,8 +168,7 @@ class _CartState extends State<Cart> {
                                           padding: EdgeInsets.only(
                                               left: 24.w, top: 40.h),
                                           child: Container(
-                                            width: 109.w,
-                                            height: 35.h,
+
                                             decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(30),
@@ -189,6 +188,7 @@ class _CartState extends State<Cart> {
 
                                                 Text(
                                                   '${_counter[index]}',
+                                                  style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),
 
 
                                                 ),
@@ -237,8 +237,8 @@ class _CartState extends State<Cart> {
               // -------------- 2nd Container  ------------------  //
 
               Container(
-                width: 334,
-                height: 138,
+                // width: 334,
+                // height: 138,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(width: 2, color: Colors.grey.shade200),
