@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:untitled1/UI/Cart.dart';
 
 import 'Home.dart';
 
@@ -22,6 +23,29 @@ class _Page2State extends State<Page2> {
     '44',
     '45'
   ];
+  List colors = [
+    {
+
+      'color': Colors.white,
+    },
+    {
+
+      'color': Colors.black,
+    },
+    {
+      'color': Colors.grey[800],
+    },
+    {
+      'color': Colors.blue[900],
+    },
+    {
+      'color': Colors.redAccent[800],
+    },
+    {
+      'color': Colors.greenAccent[800],
+    },
+  ];
+
 
 
   bool value = false;
@@ -81,7 +105,7 @@ class _Page2State extends State<Page2> {
               ),
               Center(
                 child: SizedBox(
-                  height: 310.h,
+                  height: 300.h,
                   width: 200.w,
                   child: Image.asset(
                     widget.image[0],
@@ -93,7 +117,7 @@ class _Page2State extends State<Page2> {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: 310.w),
+                    padding: EdgeInsets.only(left: 320.w),
                     child: CircleAvatar(
                       radius: 15.r,
                       backgroundColor: Colors.white,
@@ -126,7 +150,7 @@ class _Page2State extends State<Page2> {
 
               Container(
                 width: 370,
-                height: 400.h,
+
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(40.0),
@@ -171,7 +195,7 @@ class _Page2State extends State<Page2> {
                                   IconButton(
                                       onPressed: () {
                                         decrementCounter;
-                                        ;
+
                                       },
                                       icon: Icon(
                                         Icons.remove,
@@ -293,49 +317,259 @@ class _Page2State extends State<Page2> {
                                 },
                               ),
                             ),
+                            Text("Color",
+                                style: TextStyle(
+                                  fontSize: 20.sp,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                )),
+                            SizedBox(height: 5.h,),
+                            Container(
+                              width: 200.w,
+                              height: 40.h,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  // border: Border.all(width: 1,color: Colors.grey),
+                                  color: Color(0xbeeaeaea)),
+                              child: Padding(
+                                padding:  EdgeInsets.symmetric(horizontal: 10.w),
+                               child: Row(
+                                 children: [
+                                   CircleAvatar(
+                                     radius: 16.r,
+                                     backgroundColor: Colors.grey.shade700,
+                                     child: GestureDetector(
+                                       onTap: () {
+                                         setState(() {
+                                           isVisible = !isVisible;
+                                         });
+                                       },
+
+                                       child: CircleAvatar(
+                                         radius: 15.r,
+                                         backgroundColor: Colors.white,
+                                         child: isVisible == true
+                                             ? Icon(
+                                           Icons.check,
+                                           color: Colors.transparent,
+                                           size: 16,
+                                         )
+                                             : Icon(
+                                           Icons.check,
+                                           color: Colors.black,
+                                           size: 16,
+                                         ),
+                                       ),
+                                     ),
+                                   ),
+SizedBox(width: 5.w,),
+                                   CircleAvatar(
+                                     radius: 16.r,
+                                     backgroundColor: Colors.grey.shade700,
+                                     child: GestureDetector(
+                                       onTap: () {
+                                         setState(() {
+                                           isVisible = !isVisible;
+                                         });
+                                       },
+
+                                       child: CircleAvatar(
+                                         radius: 15.r,
+                                         backgroundColor: Colors.black,
+                                         child: isVisible == true
+                                             ? Icon(
+                                           Icons.check,
+                                           color: Colors.transparent,
+                                           size: 16,
+                                         )
+                                             : Icon(
+                                           Icons.check,
+                                           color: Colors.white,
+                                           size: 16,
+                                         ),
+                                       ),
+                                     ),
+                                   ),
+
+
+                                   SizedBox(width: 5.w,),
+                                   CircleAvatar(
+                                     radius: 16.r,
+                                     backgroundColor: Colors.grey.shade700,
+                                     child: GestureDetector(
+                                       onTap: () {
+                                         setState(() {
+                                           isVisible = !isVisible;
+                                         });
+                                       },
+
+                                       child: CircleAvatar(
+                                         radius: 15.r,
+                                         backgroundColor: Colors.blueAccent,
+                                         child: isVisible == true
+                                             ? Icon(
+                                           Icons.check,
+                                           color: Colors.transparent,
+                                           size: 16,
+                                         )
+                                             : Icon(
+                                           Icons.check,
+                                           color: Colors.white,
+                                           size: 16,
+                                         ),
+                                       ),
+                                     ),
+                                   ),
+
+                                   SizedBox(width: 5.w,),
+                                   CircleAvatar(
+                                     radius: 16.r,
+                                     backgroundColor: Colors.grey.shade700,
+                                     child: GestureDetector(
+                                       onTap: () {
+                                         setState(() {
+                                           isVisible = !isVisible;
+                                         });
+                                       },
+
+                                       child: CircleAvatar(
+                                         radius: 15.r,
+                                         backgroundColor: Colors.grey,
+                                         child: isVisible == true
+                                             ? Icon(
+                                           Icons.check,
+                                           color: Colors.transparent,
+                                           size: 16,
+                                         )
+                                             : Icon(
+                                           Icons.check,
+                                           color: Colors.white,
+                                           size: 16,
+                                         ),
+                                       ),
+                                     ),
+                                   ),
+
+
+                                   SizedBox(width: 5.w,),
+                                   CircleAvatar(
+                                     radius: 16.r,
+                                     backgroundColor: Colors.grey.shade700,
+                                     child: GestureDetector(
+                                       onTap: () {
+                                         setState(() {
+                                           isVisible = !isVisible;
+                                         });
+                                       },
+
+                                       child: CircleAvatar(
+                                         radius: 15.r,
+                                         backgroundColor: Colors.red,
+                                         child: isVisible == true
+                                             ? Icon(
+                                           Icons.check,
+                                           color: Colors.transparent,
+                                           size: 16,
+                                         )
+                                             : Icon(
+                                           Icons.check,
+                                           color: Colors.white,
+                                           size: 16,
+                                         ),
+                                       ),
+                                     ),
+                                   ),
+
+
+                                 ],
+                               ),
+
+
+
+
+                              ),
+                            ),
 
 
                           ],
                         ),
                       ),
+                      SizedBox(height: 5.h,),
 
-                      Row(
-                        children: [
-                          Text('\$ ${536}',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20.sp,
-                                fontWeight: FontWeight.w700,
-                              )),
-                          Padding(
-                            padding: EdgeInsets.only(left: 40.w, top: 10.h),
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Container(
-                                  width: 160.w,
-                                  height: 40.h,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      border: Border.all(
-                                          width: 1,
-                                          color: Colors.grey.shade900),
-                                      color: Color(0xfd000000)),
-                                  child: Padding(
-                                    padding:  EdgeInsets.symmetric(horizontal: 19),
-                                    child: Row(crossAxisAlignment: CrossAxisAlignment.center,
-                                                                        children: [
-                                    Icon(Icons.shopping_bag_outlined,color: Colors.white,),
-                                    SizedBox(width: 10,),
-                                    Text(
-                                      'Add To Cart',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                                                        ],
-                                                                      ),
-                                  )),
+                      Text("Description",
+                          style: TextStyle(
+                            fontSize: 20.sp,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                          )),
+                      SizedBox(height: 5.h,),
+
+                      SizedBox(height: 100.h,width: 310.w,
+                        child: Text("Engineered to crush any movement-based workout,these on sneakers enhance the labal's orginal cloud sneaker with cutting edge technologies for a pair.",
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            )),
+                      ),
+
+                      Padding(
+                        padding:  EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Total Price',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12.sp,
+                                      fontWeight: FontWeight.w400,
+                                    )),
+                                Text('\$ ${536}.${24}',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20.sp,
+                                      fontWeight: FontWeight.w700,
+                                    )),
+                              ],
                             ),
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.only(left: 40.w, ),
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.push
+                                    (context, MaterialPageRoute(builder: (builder)=>const Cart()));
+
+                                },
+                                child: TextButton(
+                                  onPressed: () {},
+                                  child: Container(
+                                      width: 160.w,
+                                      height: 40.h,
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(20),
+                                          border: Border.all(
+                                              width: 1,
+                                              color: Colors.grey.shade900),
+                                          color: Color(0xfd000000)),
+                                      child: Padding(
+                                        padding:  EdgeInsets.symmetric(horizontal: 19),
+                                        child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+                                                                            children: [
+                                        Icon(Icons.shopping_bag_outlined,color: Colors.white,),
+                                        SizedBox(width: 10,),
+                                        Text(
+                                          'Add To Cart',
+                                          style: TextStyle(color: Colors.white),
+                                        ),
+                                                                            ],
+                                                                          ),
+                                      )),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
