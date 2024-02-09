@@ -51,6 +51,9 @@ class _Page2State extends State<Page2> {
   bool value = false;
   bool isVisible = false;
 
+  bool value1 = false;
+  bool isVisible1 = false;
+
   int _counter = 1;
 
   void _incrementCounter() {
@@ -124,10 +127,10 @@ class _Page2State extends State<Page2> {
                       child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              isVisible = !isVisible;
+                              isVisible1 = !isVisible1;
                             });
                           },
-                          child: isVisible == true
+                          child: isVisible1 == true
                               ? Icon(
                                   Icons.favorite,
                                   color: Colors.red,
@@ -535,37 +538,33 @@ SizedBox(width: 5.w,),
                             ),
                             Padding(
                               padding: EdgeInsets.only(left: 40.w, ),
-                              child: GestureDetector(
-                                onTap: (){
-                                  Navigator.push
-                                    (context, MaterialPageRoute(builder: (builder)=>const Cart()));
-
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.of(context)
+                                      .push(MaterialPageRoute(builder: (builder)=>Cart()  ));
                                 },
-                                child: TextButton(
-                                  onPressed: () {},
-                                  child: Container(
-                                      width: 160.w,
-                                      height: 40.h,
-                                      decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(20),
-                                          border: Border.all(
-                                              width: 1,
-                                              color: Colors.grey.shade900),
-                                          color: Color(0xfd000000)),
-                                      child: Padding(
-                                        padding:  EdgeInsets.symmetric(horizontal: 19),
-                                        child: Row(crossAxisAlignment: CrossAxisAlignment.center,
-                                                                            children: [
-                                        Icon(Icons.shopping_bag_outlined,color: Colors.white,),
-                                        SizedBox(width: 10,),
-                                        Text(
-                                          'Add To Cart',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                                                            ],
-                                                                          ),
-                                      )),
-                                ),
+                                child: Container(
+                                    width: 160.w,
+                                    height: 40.h,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        border: Border.all(
+                                            width: 1,
+                                            color: Colors.grey.shade900),
+                                        color: Color(0xfd000000)),
+                                    child: const Padding(
+                                      padding:  EdgeInsets.symmetric(horizontal: 19),
+                                      child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+                                                                          children: [
+                                      Icon(Icons.shopping_bag_outlined,color: Colors.white,),
+                                      SizedBox(width: 10,),
+                                      Text(
+                                        'Add To Cart',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                                                          ],
+                                                                        ),
+                                    )),
                               ),
                             )
                           ],

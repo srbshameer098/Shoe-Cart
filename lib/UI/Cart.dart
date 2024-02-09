@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:untitled1/UI/Place_order.dart';
 import 'package:untitled1/Widgets/RoundButton.dart';
 
 import 'Home.dart';
@@ -359,7 +360,15 @@ class _CartState extends State<Cart> {
                 height: 15.h,
               ),
 
-              ClickButton(title: 'Proceed to Checkout', onTap: () {})
+              ClickButton(
+                  title: 'Proceed to Checkout',
+
+                    onTap: (){
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (builder)=>Place_Order()
+                      ));
+                    },
+                  )
             ],
           ),
         ),
