@@ -331,7 +331,7 @@ class _Place_OrderState extends State<Place_Order> {
                                   padding: EdgeInsets.only(
                                       top: 12.h, bottom: 12.h),
                                   child: Image.asset(
-                                   ' puma[index]',
+                                   'assets/promo code.png',
                                     // width: 76.65777587890625.w,
                                     // height: 83.19111633300781.h,
                                   ),
@@ -361,7 +361,6 @@ class _Place_OrderState extends State<Place_Order> {
                                       color: Colors.grey,
                                       fontWeight: FontWeight.w400,
                                     )),
-
                               ],
                             ),
 
