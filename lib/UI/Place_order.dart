@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:untitled1/UI/Payment.dart';
 import 'package:untitled1/UI/Tracking_page.dart';
 
 import 'Home.dart';
@@ -431,7 +432,7 @@ class _Place_OrderState extends State<Place_Order> {
                           child: TextButton(
                             onPressed: () {
                               Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (builder)=>Tracking_page()  ));
+                                  .push(MaterialPageRoute(builder: (builder)=>Payment()  ));
                             },
                             child: Container(
                                 width: 160.w,

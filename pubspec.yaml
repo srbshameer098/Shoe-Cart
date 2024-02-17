@@ -47,6 +47,8 @@ dependencies:
   firebase_database: ^10.4.0
   font_awesome_flutter: ^10.5.0
   avatar_glow: ^3.0.1
+  dotted_border: ^2.1.0
+  flutter_credit_card: ^4.0.1
 
 dev_dependencies:
   flutter_test:
