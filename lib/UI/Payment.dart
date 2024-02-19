@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled1/UI/Add_Cards.dart';
+import 'package:untitled1/UI/Cards.dart';
 
 class Payment extends StatefulWidget {
   const Payment({Key? key}) : super(key: key);
@@ -265,8 +266,10 @@ class _PaymentState extends State<Payment> {
                       // height: 93.19111633300781.h,
                       child: Padding(
                         padding: EdgeInsets.only(top: 5.h, bottom: 5.h),
-                        child: Image.asset(
-                          'assets/paypal (2).png',
+                        child:
+
+                        Image.asset(
+                          'assets/cash-on-delivery.png',
                           // width: 76.65777587890625.w,
                           // height: 83.19111633300781.h,
                         ),
@@ -488,6 +491,30 @@ class _PaymentState extends State<Payment> {
           ),
         )]),
   ),
+            TextButton(onPressed: (){
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (builder)=>Cards()  ));
+            },
+                child: Container(
+                    width: 320.w,
+                    height: 50.h,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.r),
+                        border: Border.all(
+                            width: 1, color: Colors.grey.shade900),
+                        color: Color(0xfd000000)),
+                    child: Padding(
+                      padding:
+                      EdgeInsets.symmetric(horizontal: 137.w),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Pay',
+                            style: TextStyle(color: Colors.white,fontSize: 20.sp),
+                          ),
+                        ],
+                      ),
+                    )),)
           ],
         ),
       ),

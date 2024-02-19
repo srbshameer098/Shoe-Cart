@@ -37,7 +37,8 @@ class _Add_CardState extends State<Add_Card> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: ExactAssetImage(
-                  isLightTheme ? 'assets/bg-light.png' : 'assets/bg-dark.png',
+                  isLightTheme ? 'assets/bg-light.png' :
+                  'assets/bg-dark.png',
                 ),
                 fit: BoxFit.fill,
               ),
@@ -73,10 +74,10 @@ class _Add_CardState extends State<Add_Card> {
                     obscureCardCvv: true,
                     isHolderNameVisible: true,
                     cardBgColor: isLightTheme
-                        ? Colors.redAccent
-                        : Colors.blueAccent,
+                        ?Color(0xffff0000)
+                        : Color(0xff000000),
                     backgroundImage:
-                    useBackgroundImage ? 'assets/card_bg.png' : null,
+                    useBackgroundImage ? 'assets/cardlogo5.png' : null,
                     isSwipeGestureEnabled: true,
                     onCreditCardWidgetChange:
                         (CreditCardBrand creditCardBrand) {},
@@ -138,7 +139,7 @@ class _Add_CardState extends State<Add_Card> {
                                   value: useGlassMorphism,
                                   inactiveTrackColor: Colors.grey,
                                   activeColor: Colors.white,
-                                  activeTrackColor: Colors.red,
+                                  activeTrackColor: Color(0xff000000),
                                   onChanged: (bool value) => setState(() {
                                     useGlassMorphism = value;
                                   }),
@@ -157,8 +158,8 @@ class _Add_CardState extends State<Add_Card> {
                                 Switch(
                                   value: useBackgroundImage,
                                   inactiveTrackColor: Colors.grey,
-                                  activeColor: Colors.white,
-                                  activeTrackColor: Colors.blueAccent,
+                                  activeColor:Color(0xffffffff),
+                                  activeTrackColor:    Color(0xff000000),
                                   onChanged: (bool value) => setState(() {
                                     useBackgroundImage = value;
                                   }),
@@ -178,7 +179,7 @@ class _Add_CardState extends State<Add_Card> {
                                   value: useFloatingAnimation,
                                   inactiveTrackColor: Colors.grey,
                                   activeColor: Colors.white,
-                                  activeTrackColor: Colors.yellowAccent,
+                                  activeTrackColor: Color(0xff000000),
                                   onChanged: (bool value) => setState(() {
                                     useFloatingAnimation = value;
                                   }),
@@ -197,13 +198,13 @@ class _Add_CardState extends State<Add_Card> {
                               decoration: const BoxDecoration(
                                 gradient: LinearGradient(
                                   colors: <Color>[
-                                    Color(0xffe06f6f),
-                                    Color(0xffda915d),
-                                    Color(0xffe0b86f),
-                                    Color(0xffb1e755),
-                                    Color(0xff6fe09c),
-                                    Color(0xff6fc2e0),
-                                    Color(0xffa26fe0),
+                                    Color(0xfdd3d3d3),
+                                    Color(0xff838383),
+                                    Color(0x83bebebe),
+                                    Color(0xff6c6c6c),
+                                    Color(0xff5d5c5c),
+                                    Color(0xff4f4f4f),
+                                    Color(0xff343434),
                                   ],
                                   begin: Alignment(-1, -4),
                                   end: Alignment(1, 4),
