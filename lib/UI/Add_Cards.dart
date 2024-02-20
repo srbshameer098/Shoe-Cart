@@ -92,6 +92,7 @@ class _Add_CardState extends State<Add_Card> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 40),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
@@ -127,67 +128,67 @@ class _Add_CardState extends State<Add_Card> {
                             onCreditCardModelChange: onCreditCardModelChange,
                           ),
                           const SizedBox(height: 20),
-                          Padding(
-                            padding:
-                            const EdgeInsets.symmetric(horizontal: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                const Text('Glassmorphism'),
-                                const Spacer(),
-                                Switch(
-                                  value: useGlassMorphism,
-                                  inactiveTrackColor: Colors.grey,
-                                  activeColor: Colors.white,
-                                  activeTrackColor: Color(0xff000000),
-                                  onChanged: (bool value) => setState(() {
-                                    useGlassMorphism = value;
-                                  }),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                            const EdgeInsets.symmetric(horizontal: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                const Text('Card Image'),
-                                const Spacer(),
-                                Switch(
-                                  value: useBackgroundImage,
-                                  inactiveTrackColor: Colors.grey,
-                                  activeColor:Color(0xffffffff),
-                                  activeTrackColor:    Color(0xff000000),
-                                  onChanged: (bool value) => setState(() {
-                                    useBackgroundImage = value;
-                                  }),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                            const EdgeInsets.symmetric(horizontal: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                const Text('Floating Card'),
-                                const Spacer(),
-                                Switch(
-                                  value: useFloatingAnimation,
-                                  inactiveTrackColor: Colors.grey,
-                                  activeColor: Colors.white,
-                                  activeTrackColor: Color(0xff000000),
-                                  onChanged: (bool value) => setState(() {
-                                    useFloatingAnimation = value;
-                                  }),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(height: 20),
+                          // Padding(
+                          //   padding:
+                          //   const EdgeInsets.symmetric(horizontal: 16),
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     children: <Widget>[
+                          //       const Text('Glassmorphism'),
+                          //       const Spacer(),
+                          //       Switch(
+                          //         value: useGlassMorphism,
+                          //         inactiveTrackColor: Colors.grey,
+                          //         activeColor: Colors.white,
+                          //         activeTrackColor: Color(0xff000000),
+                          //         onChanged: (bool value) => setState(() {
+                          //           useGlassMorphism = value;
+                          //         }),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
+                          // Padding(
+                          //   padding:
+                          //   const EdgeInsets.symmetric(horizontal: 16),
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     children: <Widget>[
+                          //       const Text('Card Image'),
+                          //       const Spacer(),
+                          //       Switch(
+                          //         value: useBackgroundImage,
+                          //         inactiveTrackColor: Colors.grey,
+                          //         activeColor:Color(0xffffffff),
+                          //         activeTrackColor:    Color(0xff000000),
+                          //         onChanged: (bool value) => setState(() {
+                          //           useBackgroundImage = value;
+                          //         }),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
+                          // Padding(
+                          //   padding:
+                          //   const EdgeInsets.symmetric(horizontal: 16),
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.center,
+                          //     children: <Widget>[
+                          //       const Text('Floating Card'),
+                          //       const Spacer(),
+                          //       Switch(
+                          //         value: useFloatingAnimation,
+                          //         inactiveTrackColor: Colors.grey,
+                          //         activeColor: Colors.white,
+                          //         activeTrackColor: Color(0xff000000),
+                          //         onChanged: (bool value) => setState(() {
+                          //           useFloatingAnimation = value;
+                          //         }),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
+                          const SizedBox(height: 90),
                           GestureDetector(
                             onTap: _onValidate,
                             child: Container(
