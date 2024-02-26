@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:untitled1/UI/Page1.dart';
 
 
 import 'Home.dart';
@@ -41,9 +42,9 @@ class _CategoriesState extends State<Categories> {
 
               child: GestureDetector(
                 onTap: (){
-                  //  Navigator.of(context)
-                  //     .push(MaterialPageRoute(builder: (builder)=>Page2()
-                  // ));
+                   Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (builder)=>Page1()
+                  ));
                 },
                 child: ListView.separated(
 

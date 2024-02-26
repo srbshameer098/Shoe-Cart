@@ -182,7 +182,7 @@ class _CartState extends State<Cart> {
                                                 IconButton(
                                                     onPressed:()
                                                     {
-                                                      decrementCounter(index);;
+                                                      decrementCounter(index);
                                                     },
                                                     icon: Icon(Icons.remove,size: 18,)),
 

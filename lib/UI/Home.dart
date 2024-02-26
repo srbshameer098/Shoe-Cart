@@ -152,6 +152,7 @@ List<String> liberty = [
 
 
 int selectedIndex = -1;
+int selectedIndex1 = -1;
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {

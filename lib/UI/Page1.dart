@@ -13,11 +13,16 @@ class Page1 extends StatefulWidget {
 class _Page1State extends State<Page1> {
 
   bool value = false;
-  bool isVisible=false;
+
+  List<bool> isVisible=[];
+
 
 
   @override
   Widget build(BuildContext context) {
+    for(int i=0;i<puma.length;i++){
+      isVisible.add(false);
+    }
     return  Scaffold(
       backgroundColor: Colors.white,
 
@@ -60,11 +65,12 @@ class _Page1State extends State<Page1> {
                       puma.length,
                           (index) {
 
+
                       // ----------- Main container -----------------
 
                       return GestureDetector(onTap: (){
                         Navigator.push
-                          (context, MaterialPageRoute(builder: (builder)=>Page2(image:puma ,)));
+                          (context, MaterialPageRoute(builder: (builder)=>Page2(image:puma,)));
                       },
                         child: Container(
                           width: 140.w,
@@ -105,10 +111,10 @@ class _Page1State extends State<Page1> {
                                       child: CircleAvatar(radius: 15.r,backgroundColor: Colors.black,
                                         child: GestureDetector(onTap: (){
                                           setState((){
-                                            isVisible=!isVisible;
+                                            isVisible[index]=!isVisible[index];
                                           });
                                         },
-                                            child:isVisible==true? Icon(
+                                            child:isVisible[index]==true? Icon(
                                               Icons.favorite,
                                               color: Colors.red,size: 16,
                                             ):Icon(

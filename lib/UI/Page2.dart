@@ -1,8 +1,13 @@
+
+
 import 'package:flutter/material.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled1/UI/Cart.dart';
 
 import 'Home.dart';
+
+
 
 class Page2 extends StatefulWidget {
   final List<String> image;
@@ -14,7 +19,8 @@ class Page2 extends StatefulWidget {
 }
 
 class _Page2State extends State<Page2> {
-
+  int selectedIndex = -1;
+  int selectedIndex1 = -1;
   List<String> name = [
     '40',
     '41',
@@ -23,53 +29,51 @@ class _Page2State extends State<Page2> {
     '44',
     '45'
   ];
-  List colors = [
-    {
+  List<Color> colors1 = [
+   Colors.white,
+    Colors.black,
+    Colors.grey,
+    Colors.blue,
+    Colors.redAccent,
+    Colors.greenAccent,
 
-      'color': Colors.white,
-    },
-    {
-
-      'color': Colors.black,
-    },
-    {
-      'color': Colors.grey[800],
-    },
-    {
-      'color': Colors.blue[900],
-    },
-    {
-      'color': Colors.redAccent[800],
-    },
-    {
-      'color': Colors.greenAccent[800],
-    },
   ];
 
 
 
-  bool value = false;
-  bool isVisible = false;
-
   bool value1 = false;
   bool isVisible1 = false;
 
+  bool value = false;
+
+  List<bool> isVisible=[];
+
   int _counter = 1;
+  int allowedUnit=9;
+
+
 
   void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+    if(_counter <=allowedUnit){
+      setState(() {
+        _counter++;
+      });
+    }
   }
 
   void decrementCounter() {
-    setState(() {
-      _counter--;
-    });
+    if(_counter>1){
+      setState(() {
+        _counter--;
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    for(int i=0;i<puma.length;i++){
+      isVisible.add(false);
+    }
     return Scaffold(
       backgroundColor: Color(0xfceeeeee),
       body: SingleChildScrollView(
@@ -109,7 +113,7 @@ class _Page2State extends State<Page2> {
               Center(
                 child: SizedBox(
                   height: 300.h,
-                  width: 200.w,
+                  // width: 200.w,
                   child: Image.asset(
                     widget.image[0],
                     fit: BoxFit.fill,
@@ -130,7 +134,7 @@ class _Page2State extends State<Page2> {
                               isVisible1 = !isVisible1;
                             });
                           },
-                          child: isVisible1 == true
+                          child:isVisible==true
                               ? Icon(
                                   Icons.favorite,
                                   color: Colors.red,
@@ -185,37 +189,43 @@ class _Page2State extends State<Page2> {
                             ],
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 100.w, top: 0.h),
+                            padding: EdgeInsets.only(left: 99.w, top: 0.h),
                             child: Container(
-                              width: 109.w,
+                              width: 120.w,
                               height: 35.h,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   // border: Border.all(width: 1,color: Colors.grey),
                                   color: Color(0xa1eaeaea)),
-                              child: Row(
-                                children: [
-                                  IconButton(
-                                      onPressed: () {
-                                        decrementCounter;
+                              child: Center(
+                                child: Row(
+                                  children: [
+                                    IconButton(
+                                        onPressed: () {
+                                          decrementCounter();
 
-                                      },
-                                      icon: Icon(
-                                        Icons.remove,
-                                        size: 18,
-                                      )),
-                                  Text(
-                                    '$_counter',
-                                  ),
-                                  IconButton(
-                                      onPressed: () {
-                                        _incrementCounter;
-                                      },
-                                      icon: Icon(
-                                        Icons.add,
-                                        size: 18,
-                                      )),
-                                ],
+                                        },
+                                        icon: Icon(
+                                          Icons.remove,
+                                          size: 18,
+                                        )),
+                                    SizedBox(width: 20.w,
+                                      child: Center(
+                                        child: Text(
+                                          '$_counter',
+                                        ),
+                                      ),
+                                    ),
+                                    IconButton(
+                                        onPressed: () {
+                                          _incrementCounter();
+                                        },
+                                        icon: Icon(
+                                          Icons.add,
+                                          size: 18,
+                                        )),
+                                  ],
+                                ),
                               ),
                             ),
                           )
@@ -328,7 +338,7 @@ class _Page2State extends State<Page2> {
                                 )),
                             SizedBox(height: 5.h,),
                             Container(
-                              width: 200.w,
+                              // width: 200.w,
                               height: 40.h,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
@@ -336,162 +346,59 @@ class _Page2State extends State<Page2> {
                                   color: Color(0xbeeaeaea)),
                               child: Padding(
                                 padding:  EdgeInsets.symmetric(horizontal: 10.w),
-                               child: Row(
-                                 children: [
-                                   CircleAvatar(
-                                     radius: 16.r,
-                                     backgroundColor: Colors.grey.shade700,
-                                     child: GestureDetector(
-                                       onTap: () {
-                                         setState(() {
-                                           isVisible = !isVisible;
-                                         });
-                                       },
+                               child: Expanded(
+                                 child: ListView.builder(
+                                   scrollDirection: Axis.horizontal,
+                                     itemCount: colors1.length,
+                                     itemBuilder: (BuildContext context, int index){
+                                     return
+                                       GestureDetector(
+                                         onTap: () {
+                                           setState(() {
 
-                                       child: CircleAvatar(
-                                         radius: 15.r,
-                                         backgroundColor: Colors.white,
-                                         child: isVisible == true
-                                             ? Icon(
-                                           Icons.check,
-                                           color: Colors.transparent,
-                                           size: 16,
-                                         )
-                                             : Icon(
-                                           Icons.check,
-                                           color: Colors.black,
-                                           size: 16,
+                                             selectedIndex1=index;
+                                           });
+                                         },
+
+                                         child: Row(
+                                           children: [
+                                             CircleAvatar(
+                                               radius: 16.r,
+                                               backgroundColor: Colors.grey.shade700,
+                                               child: CircleAvatar(
+                                                 radius: 15.r,
+                                                 backgroundColor: colors1[index],
+                                                 child:selectedIndex1==index
+                                                     ?Icon(
+                                                   Icons.check,
+                                                   color: Color(0xff7c7272),
+                                                   size: 16,
+                                                 )
+                                                     :  Icon(
+                                                 Icons.check,
+                                                 color: Colors.transparent,
+                                                 size: 16,
+                                               )
+                                               ),
+                                             ),
+                                             SizedBox(width: 5,)
+                                           ],
                                          ),
-                                       ),
-                                     ),
-                                   ),
-SizedBox(width: 5.w,),
-                                   CircleAvatar(
-                                     radius: 16.r,
-                                     backgroundColor: Colors.grey.shade700,
-                                     child: GestureDetector(
-                                       onTap: () {
-                                         setState(() {
-                                           isVisible = !isVisible;
-                                         });
-                                       },
-
-                                       child: CircleAvatar(
-                                         radius: 15.r,
-                                         backgroundColor: Colors.black,
-                                         child: isVisible == true
-                                             ? Icon(
-                                           Icons.check,
-                                           color: Colors.transparent,
-                                           size: 16,
-                                         )
-                                             : Icon(
-                                           Icons.check,
-                                           color: Colors.white,
-                                           size: 16,
-                                         ),
-                                       ),
-                                     ),
-                                   ),
 
 
-                                   SizedBox(width: 5.w,),
-                                   CircleAvatar(
-                                     radius: 16.r,
-                                     backgroundColor: Colors.grey.shade700,
-                                     child: GestureDetector(
-                                       onTap: () {
-                                         setState(() {
-                                           isVisible = !isVisible;
-                                         });
-                                       },
+                                       );
 
-                                       child: CircleAvatar(
-                                         radius: 15.r,
-                                         backgroundColor: Colors.blueAccent,
-                                         child: isVisible == true
-                                             ? Icon(
-                                           Icons.check,
-                                           color: Colors.transparent,
-                                           size: 16,
-                                         )
-                                             : Icon(
-                                           Icons.check,
-                                           color: Colors.white,
-                                           size: 16,
-                                         ),
-                                       ),
-                                     ),
-                                   ),
-
-                                   SizedBox(width: 5.w,),
-                                   CircleAvatar(
-                                     radius: 16.r,
-                                     backgroundColor: Colors.grey.shade700,
-                                     child: GestureDetector(
-                                       onTap: () {
-                                         setState(() {
-                                           isVisible = !isVisible;
-                                         });
-                                       },
-
-                                       child: CircleAvatar(
-                                         radius: 15.r,
-                                         backgroundColor: Colors.grey,
-                                         child: isVisible == true
-                                             ? Icon(
-                                           Icons.check,
-                                           color: Colors.transparent,
-                                           size: 16,
-                                         )
-                                             : Icon(
-                                           Icons.check,
-                                           color: Colors.white,
-                                           size: 16,
-                                         ),
-                                       ),
-                                     ),
-                                   ),
-
-
-                                   SizedBox(width: 5.w,),
-                                   CircleAvatar(
-                                     radius: 16.r,
-                                     backgroundColor: Colors.grey.shade700,
-                                     child: GestureDetector(
-                                       onTap: () {
-                                         setState(() {
-                                           isVisible = !isVisible;
-                                         });
-                                       },
-
-                                       child: CircleAvatar(
-                                         radius: 15.r,
-                                         backgroundColor: Colors.red,
-                                         child: isVisible == true
-                                             ? Icon(
-                                           Icons.check,
-                                           color: Colors.transparent,
-                                           size: 16,
-                                         )
-                                             : Icon(
-                                           Icons.check,
-                                           color: Colors.white,
-                                           size: 16,
-                                         ),
-                                       ),
-                                     ),
-                                   ),
-
-
-                                 ],
+                                     }
+                                 ),
                                ),
+
 
 
 
 
                               ),
                             ),
+                            SizedBox(width: 5,)
 
 
                           ],
