@@ -28,8 +28,8 @@ class _AccountState extends State<Account> {
           IconButton(
               onPressed: () {
                 auth.signOut().then((value) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                  Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context) => HomePage()),(Route<dynamic> route) => false);
                 }).onError((error, stackTrace) {
                   Utils().toastMessage(error.toString());
                 });

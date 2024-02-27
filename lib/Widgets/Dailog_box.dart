@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:untitled1/UI/Bottomnav.dart';
 
 TextEditingController name=TextEditingController();
 class CustomDialog extends StatelessWidget {
@@ -8,101 +12,81 @@ class CustomDialog extends StatelessWidget {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
       elevation: 0.0,
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.white,
       child: dialogContent(context),
     );
   }
 
   Widget dialogContent(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 10.0,right: 10.0),
-      child: Stack(
+      margin: EdgeInsets.only(left: 10.w,right: 10.w,bottom: 10.h,top: 20.h),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Container(
-            padding: EdgeInsets.only(
-              top: 18.0,
-            ),
-            margin: EdgeInsets.only(top: 13.0,right: 8.0),
-            decoration: BoxDecoration(
-                color: Colors.red,
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(16.0),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.transparent,
-                    blurRadius: 0.0,
-                    offset: Offset(0.0, 0.0),
-                  ),
-                ]),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  height: 20.0,
-                ),
-                Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child:  TextField(controller: name,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
 
-                              borderRadius: BorderRadius.circular(20)
-                          ),
-                          hintText: 'User_name',
-                          hintStyle: TextStyle(
-                              fontSize: 20
-                          ),
-                        ),
-                      ),
-                    )//
-                ),
+          Stack(
+            children:[ CircleAvatar(radius: 40.r,child:
+            // Image.asset('assets/cash-on-delivery.png')
+              Icon(Icons.credit_card_sharp,color: Colors.white,size: 40,),
+              backgroundColor: Colors.black,),
 
-                SizedBox(height: 24.0),
-                // Divider(thickness: 0.5,),
-                InkWell(
-                  child: Container(
-                    padding: EdgeInsets.only(top: 15.0,bottom:15.0),
-                    decoration: BoxDecoration(
-                      color:Colors.white,
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(16.0),
-                          bottomRight: Radius.circular(16.0)),
-                    ),
-                    child:  Text(
-                      "Success",
-                      style: TextStyle(color: Colors.blue,fontSize: 25.0),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  onTap:(){
 
-                    Navigator.of(context).pop();
-                  },
-                )
-              ],
-            ),
+              Positioned(left: 60.w,top: 5.h,
+                child: CircleAvatar(radius: 10.r,child:
+                // Image.asset('assets/cash-on-delivery.png')
+                Center(child: Icon(Icons.check,color: Colors.white,size: 16,))
+                  ,
+                  backgroundColor: Colors.green,),
+              ),
+            ]
           ),
-          Positioned(
-            right: 0.0,
-            child: GestureDetector(
-              onTap: (){
-                Navigator.of(context).pop();
-              },
-              child: Align(
-                alignment: Alignment.topRight,
-                child: CircleAvatar(
-                  radius: 14.0,
-                  backgroundColor: Colors.white,
-                  child: Icon(Icons.close, color: Colors.blueAccent),
+          Center(
+              child: Padding(
+                padding: const EdgeInsets.all(5.0),
+                child:  Text('Successful!', style: TextStyle(color: Colors.black,fontSize: 28.sp,fontWeight: FontWeight.w900),)
+              )//
+          ),
+          Center(
+              child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child:  Text('you have successfully your \nConfirm payment send!', style: TextStyle(color: Colors.black,fontSize: 16.sp),textAlign: TextAlign.center,)
+              )//
+          ),
+
+          SizedBox(height: 10.h),
+          // Divider(thickness: 0.5,),
+          InkWell(
+            child: Container(
+              padding: EdgeInsets.only(top: 5.h,bottom:5.h,left: 10.w,right: 10.w),
+              decoration: BoxDecoration(
+                color:Colors.black,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20.r),
+                    bottomRight: Radius.circular(20.r),
+                topLeft: Radius.circular(20.r),
+                    topRight: Radius.circular(20.r),
+                ),
+              ),
+              child:  Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 5.h),
+                child: Text(
+                  "Continue shopping",
+                  style: TextStyle(color: Colors.white,fontSize: 20.sp,fontWeight: FontWeight.w700),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
+            onTap:(){
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                      builder: (context) => BottomNav()),
+                      (route) => false
+              );
+
+            },
           ),
+          SizedBox(height: 10.h),
         ],
       ),
     );

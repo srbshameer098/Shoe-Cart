@@ -326,8 +326,11 @@ class _CardsState extends State<Cards> {
               SizedBox(height: 70.h,),
         
               TextButton(onPressed: (){
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (builder)=>CustomDialog()  ));
+                showDialog(
+                    context: context,
+                    builder: (_) =>   CustomDialog()
+                );
+
               },
                 child: Container(
                     width: 320.w,

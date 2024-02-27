@@ -38,109 +38,134 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return  Scaffold(
 
-      appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
 
-        title: Center(child: Text('Signup')),
-
-      ),
 
       body: Padding(
         padding:  EdgeInsets.only(left:20.w,top: 20.h,right: 20.w),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
-
-          children: [
-            Form(
-                key: formkey,
-                child: Column(
-                  children: [
-                    TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      controller: emailController,
-                      decoration: InputDecoration(
-                          hintText: 'Email',
-                          // helperText: 'enter email e.g: example@gmail.com',
-                          prefixIcon: Icon(Icons.alternate_email_rounded,color: Colors.black,)
-                      ),
-                      validator: (value){
-                        if(value!.isEmpty){
-                          return 'Enter email';
-                        }return null;
-                      },
-                    ),
-                    SizedBox(height: 15.h),
-
-                    TextFormField(
-                      keyboardType: TextInputType.text,
-                      controller: passwordController,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          hintText: 'Password',
-                          // helperText: 'enter password e.g: 123456',
-                          prefixIcon: Icon(Icons.lock_outline_rounded,color: Colors.black,),
-                          suffixIcon:  GestureDetector(onTap: (){
-                            setState((){
-                              isVisible=!isVisible;
-                            });
-                          },
-                            child:isVisible==false? Icon(
-                              Icons.remove_red_eye_outlined,size: 24,
-                              color: Colors.grey,
-                            ):FaIcon(FontAwesomeIcons.eyeSlash,color: Colors.grey,),
+        child: SingleChildScrollView(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start,mainAxisAlignment: MainAxisAlignment.start,
+          
+            children: [
+          
+          
+              SizedBox(height: 50.h,),
+              Center(
+                child: SizedBox(height: 150.h,width: 150.w,
+                  child: Image.asset("assets/Brand.png",
+                  ),
+                ),
+              ),
+              SizedBox(height: 20.h,),
+              Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child:  Text('Sign Up', style: TextStyle(color: Colors.black,fontSize: 28.sp,fontWeight: FontWeight.w700),)
+              ),
+              Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child:  Text('Create an new account', style: TextStyle(color: Colors.black,fontSize: 18.sp),textAlign: TextAlign.center,)
+              ),
+              SizedBox(height: 50.h,),
+          
+              Form(
+                  key: formkey,
+                  child: Column(
+                    children: [
+          
+          
+          
+          
+          
+          
+                      TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        controller: emailController,
+                        decoration: InputDecoration(
+                            // hintText: 'Email',
+                          label: Text('Email',style:TextStyle(color: Colors.black,fontSize: 23.sp,fontWeight: FontWeight.w400) ,
+                            // helperText: 'enter email e.g: example@gmail.com',
                           )
-
+                        ),
+                        validator: (value){
+                          if(value!.isEmpty){
+                            return 'Enter email';
+                          }return null;
+                        },
                       ),
-                      validator: (value){
-                        if(value!.isEmpty){
-                          return 'Enter password';
-                        }return null;
-                      },
-                    ),
-                  ],
-                )),
-
-
-            SizedBox(height: 50.h),
-            RoundButton(
-                title: 'Sign up',
-                loading: loading,
-                onTap: () {
-                  if (formkey.currentState!.validate()){
-                   setState(() {
-                     loading =true;
-                   });
-
-                    auth.createUserWithEmailAndPassword(
-                        email: emailController.text.toString(),
-                        password: passwordController.text.toString()).then((value){
-                      setState(() {
-                        loading =false;
+                      SizedBox(height: 15.h),
+          
+                      TextFormField(
+                        keyboardType: TextInputType.text,
+                        controller: passwordController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          label: Text('Password',style:TextStyle(color: Colors.black,fontSize: 23.sp,fontWeight: FontWeight.w400) ,
+                            // hintText: '',
+                            // helperText: 'enter password e.g: 123456',
+                          ),
+                            suffixIcon:  GestureDetector(onTap: (){
+                              setState((){
+                                isVisible=!isVisible;
+                              });
+                            },
+                              child:isVisible==false? Icon(
+                                Icons.remove_red_eye_outlined,size: 24,
+                                color: Colors.grey,
+                              ):FaIcon(FontAwesomeIcons.eyeSlash,color: Colors.grey,),
+                            )
+          
+                        ),
+                        validator: (value){
+                          if(value!.isEmpty){
+                            return 'Enter password';
+                          }return null;
+                        },
+                      ),
+                    ],
+                  )),
+          
+          
+              SizedBox(height: 100.h),
+              TubeButton(
+                  title: 'Sign up',
+                  loading: loading,
+                  onTap: () {
+                    if (formkey.currentState!.validate()){
+                     setState(() {
+                       loading =true;
+                     });
+          
+                      auth.createUserWithEmailAndPassword(
+                          email: emailController.text.toString(),
+                          password: passwordController.text.toString()).then((value){
+                        setState(() {
+                          loading =false;
+                        });
+                      }).onError((error, stackTrace) {
+          
+                Utils().toastMessage(error.toString());
+                setState(() {
+          loading =false;
+                });
                       });
-                    }).onError((error, stackTrace) {
-
-      Utils().toastMessage(error.toString());
-      setState(() {
-        loading =false;
-      });
-                    });
+                    }
                   }
-                }
-
-            ),
-            SizedBox(height: 50.h,),
-            Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Already have an account ?  ',style: TextStyle(color: Colors.black)),
-
-
-                GestureDetector(onTap: (){
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder:(context) =>HomePage()));
-                },
-                    child: Text('Login ',style: TextStyle(color: Colors.blueAccent),))
-              ],
-            )
-          ],
+          
+              ),
+              SizedBox(height: 50.h,),
+              Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Already have an account ?  ',style: TextStyle(color: Colors.black)),
+          
+          
+                  GestureDetector(onTap: (){
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder:(context) =>HomePage()));
+                  },
+                      child: Text('Login ',style: TextStyle(color: Colors.blueAccent),))
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

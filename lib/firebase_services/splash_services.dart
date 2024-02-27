@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled1/Auth/Frame_1.dart';
 
 import '../Auth/login_screen.dart';
 import '../UI/Bottomnav.dart';
@@ -25,7 +26,7 @@ class SplashServices {
       Timer(
           const Duration(seconds: 2),
           () => Navigator.pushAndRemoveUntil(
-              context, MaterialPageRoute(builder: (context) => HomePage()),(Route<dynamic> route) => false));
+              context, MaterialPageRoute(builder: (context) => Frame_1()),(Route<dynamic> route) => false));
     }
   }
 }

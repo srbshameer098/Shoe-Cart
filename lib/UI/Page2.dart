@@ -75,7 +75,8 @@ class _Page2State extends State<Page2> {
       isVisible.add(false);
     }
     return Scaffold(
-      backgroundColor: Color(0xfceeeeee),
+      backgroundColor: const Color(0xfceeeeee),
+
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -89,7 +90,7 @@ class _Page2State extends State<Page2> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.arrow_back,
                           size: 16,
                         )),
@@ -101,7 +102,7 @@ class _Page2State extends State<Page2> {
                       child: CircleAvatar(
                           radius: 15.r,
                           backgroundColor: Colors.white,
-                          child: Icon(
+                          child: const Icon(
                             Icons.shopping_bag_outlined,
                             color: Colors.black,
                             size: 16,
@@ -134,13 +135,13 @@ class _Page2State extends State<Page2> {
                               isVisible1 = !isVisible1;
                             });
                           },
-                          child:isVisible==true
-                              ? Icon(
+                          child:isVisible1==true
+                              ? const Icon(
                                   Icons.favorite,
                                   color: Colors.red,
                                   size: 16,
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.favorite_border,
                                   color: Colors.black,
                                   size: 16,
@@ -158,14 +159,14 @@ class _Page2State extends State<Page2> {
               Container(
                 width: 370,
 
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(40.0),
                       topLeft: Radius.circular(40.0),
                     ),
                     color: Color(0xf792424)),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -196,7 +197,7 @@ class _Page2State extends State<Page2> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   // border: Border.all(width: 1,color: Colors.grey),
-                                  color: Color(0xa1eaeaea)),
+                                  color: const Color(0xa1eaeaea)),
                               child: Center(
                                 child: Row(
                                   children: [
@@ -205,7 +206,7 @@ class _Page2State extends State<Page2> {
                                           decrementCounter();
 
                                         },
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.remove,
                                           size: 18,
                                         )),
@@ -220,7 +221,7 @@ class _Page2State extends State<Page2> {
                                         onPressed: () {
                                           _incrementCounter();
                                         },
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.add,
                                           size: 18,
                                         )),
@@ -235,22 +236,22 @@ class _Page2State extends State<Page2> {
                         children: [
                           Icon(
                             Icons.star,
-                            color: Color(0xfff3922b),
+                            color: const Color(0xfff3922b),
                             size: 16.sp,
                           ),
                           Icon(
                             Icons.star,
-                            color: Color(0xfff3922b),
+                            color: const Color(0xfff3922b),
                             size: 16.sp,
                           ),
                           Icon(
                             Icons.star,
-                            color: Color(0xfff3922b),
+                            color: const Color(0xfff3922b),
                             size: 16.sp,
                           ),
                           Icon(
                             Icons.star,
-                            color: Color(0xfff3922b),
+                            color: const Color(0xfff3922b),
                             size: 16.sp,
                           ),
                           Icon(
@@ -309,14 +310,14 @@ class _Page2State extends State<Page2> {
 
 
                                             backgroundColor: selectedIndex == index
-                                                ? Color(0xfd000000)
-                                                : Color(0xffffffff),
+                                                ? const Color(0xfd000000)
+                                                : const Color(0xffffffff),
                                         child: Text(name[index],
                                             style: TextStyle(
                                               fontSize: 18.sp,
                                               color:selectedIndex == index
-                                                  ? Color(0xfdffffff)
-                                                  : Color(0xfd000000),
+                                                  ? const Color(0xfdffffff)
+                                                  : const Color(0xfd000000),
                                               fontWeight: FontWeight.w600,
                                             )),
 
@@ -343,7 +344,7 @@ class _Page2State extends State<Page2> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   // border: Border.all(width: 1,color: Colors.grey),
-                                  color: Color(0xbeeaeaea)),
+                                  color: const Color(0xbeeaeaea)),
                               child: Padding(
                                 padding:  EdgeInsets.symmetric(horizontal: 10.w),
                                child: Expanded(
@@ -369,19 +370,19 @@ class _Page2State extends State<Page2> {
                                                  radius: 15.r,
                                                  backgroundColor: colors1[index],
                                                  child:selectedIndex1==index
-                                                     ?Icon(
+                                                     ?const Icon(
                                                    Icons.check,
                                                    color: Color(0xff7c7272),
                                                    size: 16,
                                                  )
-                                                     :  Icon(
+                                                     :  const Icon(
                                                  Icons.check,
                                                  color: Colors.transparent,
                                                  size: 16,
                                                )
                                                ),
                                              ),
-                                             SizedBox(width: 5,)
+                                             const SizedBox(width: 5,)
                                            ],
                                          ),
 
@@ -398,7 +399,7 @@ class _Page2State extends State<Page2> {
 
                               ),
                             ),
-                            SizedBox(width: 5,)
+                            const SizedBox(width: 5,)
 
 
                           ],
@@ -424,7 +425,7 @@ class _Page2State extends State<Page2> {
                       ),
 
                       Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 10),
+                        padding:  const EdgeInsets.symmetric(horizontal: 10),
                         child: Row(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Column(crossAxisAlignment: CrossAxisAlignment.start,
@@ -448,7 +449,7 @@ class _Page2State extends State<Page2> {
                               child: TextButton(
                                 onPressed: () {
                                   Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (builder)=>Cart()  ));
+                                      .push(MaterialPageRoute(builder: (builder)=>const Cart()  ));
                                 },
                                 child: Container(
                                     width: 160.w,
@@ -458,7 +459,7 @@ class _Page2State extends State<Page2> {
                                         border: Border.all(
                                             width: 1,
                                             color: Colors.grey.shade900),
-                                        color: Color(0xfd000000)),
+                                        color: const Color(0xfd000000)),
                                     child: const Padding(
                                       padding:  EdgeInsets.symmetric(horizontal: 19),
                                       child: Row(crossAxisAlignment: CrossAxisAlignment.center,

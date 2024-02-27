@@ -23,34 +23,46 @@ class _LogInWithPhoneNumberState extends State<LogInWithPhoneNumber> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
-        title: Center(
-          child: Text('Phone'),
-        ),
-      ),
+
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
-        child: Column(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(height: 50.h,),
+            Center(
+              child: SizedBox(height: 150.h,width: 150.w,
+                child: Image.asset("assets/Brand.png",
+                ),
+              ),
+            ),
+            SizedBox(height: 20.h,),
+            Padding(
+                padding: const EdgeInsets.all(5.0),
+                child:  Text('Login with Phone', style: TextStyle(color: Colors.black,fontSize: 26.sp,fontWeight: FontWeight.w600),)
+            ),
+            Padding(
+                padding: const EdgeInsets.all(5.0),
+                child:  Text('Enter the  phone Number', style: TextStyle(color: Colors.black,fontSize: 18.sp),textAlign: TextAlign.center,)
+            ),
+
             SizedBox(height: 60.h,),
             TextFormField(
               keyboardType: TextInputType.phone,
               controller: PhoneNumberController,
               decoration: InputDecoration(
-
-                hintText: '+91 00000 00000'
+                prefixText: '+91',
+                hintText: '99999 99999'
               ),
             ),
             SizedBox(height: 80.h,),
-            RoundButton(title: 'Next',loading: loading, onTap: (){
+            TubeButton(title: 'Next',loading: loading, onTap: (){
 
               setState(() {
                 loading = true ;
               });
 
               auth.verifyPhoneNumber(
-                phoneNumber: PhoneNumberController.text,
+                phoneNumber: "+91${PhoneNumberController.text}",
                   verificationCompleted: (_){
 
                   setState(() {

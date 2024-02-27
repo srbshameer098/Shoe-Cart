@@ -24,16 +24,30 @@ class _Verify_codeState extends State<Verify_code> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
-        title: Center(
-          child: Text('Verify'),
-        ),
-      ),
+
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
-        child: Column(
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
+            SizedBox(height: 50.h,),
+            Center(
+              child: SizedBox(height: 150.h,width: 150.w,
+                child: Image.asset("assets/Brand.png",
+                ),
+              ),
+            ),
+            SizedBox(height: 20.h,),
+            Padding(
+                padding: const EdgeInsets.all(5.0),
+                child:  Text('Verify', style: TextStyle(color: Colors.black,fontSize: 26.sp,fontWeight: FontWeight.w600),)
+            ),
+            Padding(
+                padding: const EdgeInsets.all(5.0),
+                child:  Text('Enter the  Code', style: TextStyle(color: Colors.black,fontSize: 18.sp),textAlign: TextAlign.center,)
+            ),
+
+
             SizedBox(height: 60.h,),
             TextFormField(
               keyboardType: TextInputType.phone,
@@ -44,7 +58,7 @@ class _Verify_codeState extends State<Verify_code> {
               ),
             ),
             SizedBox(height: 80.h,),
-            RoundButton(title: 'Verify',loading: loading, onTap: ()async{
+            TubeButton(title: 'Verify',loading: loading, onTap: ()async{
 
               setState(() {
                 loading = true ;

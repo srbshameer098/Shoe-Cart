@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lottie/lottie.dart';
 
-import '../UI/Home.dart';
+
+
 
 
 
@@ -37,12 +37,12 @@ class RoundButton extends StatelessWidget {
       child: Container(
         height: 50.w,
         decoration: BoxDecoration(
-            color: Colors.blue, borderRadius: BorderRadius.circular(10.r)),
+            color: Colors.black, borderRadius: BorderRadius.circular(25.r)),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.symmetric(horizontal: 15.w,vertical: 10.h),
           child: Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
             children: [
-             FaIcon(Icons,size: 24.sp,),
+             FaIcon(Icons,size: 24.sp,color: Colors.white,),
               SizedBox(width: 15.w,),
               Center(
                 child: loading
@@ -61,8 +61,68 @@ class RoundButton extends StatelessWidget {
 }
 
 
-// --------------  Loading Button  ------------------  //
 
+
+
+// --------------  Tube Button  ------------------  //
+
+class TubeButton extends StatelessWidget {
+  final bool loading;
+  final String title;
+  final dynamic Icons;
+
+  final VoidCallback onTap;
+
+  const TubeButton(
+      {Key? key,
+        required this.title,
+        required this.onTap,
+        this.loading = false,
+        this.Icons})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: 50.w,
+        decoration: BoxDecoration(
+            color: Colors.black, borderRadius: BorderRadius.circular(25.r)),
+        child: Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 15.w,vertical: 10.h),
+          child: Row(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+              SizedBox(width: 15.w,),
+              Center(
+                child: loading
+                    ? CircularProgressIndicator(strokeWidth: 3,color: Colors.white,)
+                    : Text(
+                  title,
+                  style: TextStyle(color: Colors.white, fontSize: 22.sp,fontWeight: FontWeight.w700),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+// --------------  Loading Button  ------------------  //
+//
 // class LoadingButton extends StatefulWidget {
 //   final bool loading;
 //   final String title;
@@ -94,8 +154,8 @@ class RoundButton extends StatelessWidget {
 //           setState(() {
 //             var loading=false;
 //           });
-//           Navigator.push(context,
-//               MaterialPageRoute(builder: (context)=>page2()));
+//            Navigator.push(context,
+//                MaterialPageRoute(builder: (context)=>page2()));
 //         });
 //
 //       },
