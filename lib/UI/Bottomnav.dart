@@ -26,7 +26,7 @@ class _BottomNavState extends State<BottomNav> {
     },
     items: [
 
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black,), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined,color: Colors.black,), label: "Home",),
           BottomNavigationBarItem(icon:  Icon(Icons.category_outlined,color: Colors.black), label: "Categories"),
           BottomNavigationBarItem(icon:  Icon(Icons.shopping_cart_outlined,color: Colors.black), label: "Cart"),
       BottomNavigationBarItem(icon:  Icon(Icons.perm_identity_outlined,color: Colors.black), label: "Account"),
