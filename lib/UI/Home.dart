@@ -118,7 +118,14 @@ List<String> logo = [
   'assets/woodland.png',
   'assets/converse.png'
 ];
-
+List<String> logoname = [
+  'puma',
+  'adidas',
+  'nike',
+  'reebok',
+  'woodland',
+  'converse'
+];
 List<String> puma = [
   'assets/nike5.png',
   'assets/puma2.webp',

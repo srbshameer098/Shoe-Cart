@@ -33,7 +33,7 @@ class _SignupState extends State<Signup> {
     passwordController.dispose();
   }
   bool value = false;
-  bool isVisible=false;
+  bool isVisible=true;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -77,6 +77,7 @@ class _SignupState extends State<Signup> {
           
           
                       TextFormField(
+                        textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.emailAddress,
                         controller: emailController,
                         decoration: InputDecoration(
@@ -94,9 +95,10 @@ class _SignupState extends State<Signup> {
                       SizedBox(height: 15.h),
           
                       TextFormField(
+                        textInputAction: TextInputAction.done,
                         keyboardType: TextInputType.text,
                         controller: passwordController,
-                        obscureText: true,
+                        obscureText: isVisible,
                         decoration: InputDecoration(
                           label: Text('Password',style:TextStyle(color: Colors.black,fontSize: 23.sp,fontWeight: FontWeight.w400) ,
                             // hintText: '',
@@ -107,10 +109,10 @@ class _SignupState extends State<Signup> {
                                 isVisible=!isVisible;
                               });
                             },
-                              child:isVisible==false? Icon(
+                              child:isVisible==false? const FaIcon(
                                 Icons.remove_red_eye_outlined,size: 24,
                                 color: Colors.grey,
-                              ):FaIcon(FontAwesomeIcons.eyeSlash,color: Colors.grey,),
+                              ):const FaIcon(FontAwesomeIcons.eyeSlash,size: 18,color: Colors.grey,),
                             )
           
                         ),

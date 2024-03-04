@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   bool value = false;
-  bool isVisible = false;
+  bool isVisible = true;
 
   void login() {
     setState(() {
@@ -148,6 +148,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       TextFormField(
+                        textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.emailAddress,
                         controller: emailController,
                         decoration: InputDecoration(
@@ -168,9 +169,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(height: 20.h),
                       TextFormField(
+                        textInputAction: TextInputAction.done,
                         keyboardType: TextInputType.text,
                         controller: passwordController,
-                        obscureText: true,
+                         obscureText: isVisible,
                         decoration: InputDecoration(
                            label:Text('Password',style:TextStyle(color: Colors.black,fontSize: 23.sp,fontWeight: FontWeight.w400) ,) ,
                             // helperText: 'enter password e.g: ********',
@@ -181,18 +183,21 @@ class _HomePageState extends State<HomePage> {
                             suffixIcon: GestureDetector(
                               onTap: () {
                                 setState(() {
+
                                   isVisible = !isVisible;
                                 });
                               },
                               child: isVisible == false
                                   ? const FaIcon(
-                                      Icons.remove_red_eye_outlined,
+                                Icons.remove_red_eye_outlined,
+
                                       size: 24,
                                       color: Colors.grey,
                                     )
                                   : FaIcon(
-                                      FontAwesomeIcons.eyeSlash,
-                                      size: 20.sp,
+                                FontAwesomeIcons.eyeSlash,
+
+                                      size: 18.sp,
                                       color: Colors.grey,
                                     ),
                             )),

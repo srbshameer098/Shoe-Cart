@@ -76,7 +76,71 @@ class _Page2State extends State<Page2> {
     }
     return Scaffold(
       backgroundColor: const Color(0xfceeeeee),
-
+bottomSheet: Container(
+  height: 70,
+  decoration: const BoxDecoration(
+      borderRadius: BorderRadius.only(
+        topRight: Radius.circular(0.0),
+        topLeft: Radius.circular(0.0),
+      ),
+      color: Color(0xffffffff)),
+  child:  Padding(
+    padding:  const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+    child: SizedBox(height: 55,
+      child: Row(mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Total Price',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                  )),
+              Text('\$ ${536}.${24}',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w700,
+                  )),
+            ],
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 60.w, ),
+            child: TextButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (builder)=>const Cart()  ));
+              },
+              child: Container(
+                  width: 160.w,
+                  height: 40.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                          width: 1,
+                          color: Colors.grey.shade900),
+                      color: const Color(0xfd000000)),
+                  child: const Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 19),
+                    child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(Icons.shopping_bag_outlined,color: Colors.white,),
+                        SizedBox(width: 10,),
+                        Text(
+                          'Add To Cart',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  )),
+            ),
+          )
+        ],
+      ),
+    ),
+  ),
+),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -99,14 +163,20 @@ class _Page2State extends State<Page2> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: CircleAvatar(
-                          radius: 15.r,
-                          backgroundColor: Colors.white,
-                          child: const Icon(
-                            Icons.shopping_bag_outlined,
-                            color: Colors.black,
-                            size: 16,
-                          )),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (builder)=>const Cart()  ));
+                        },
+                        child: CircleAvatar(
+                            radius: 15.r,
+                            backgroundColor: Colors.white,
+                            child: const Icon(
+                              Icons.shopping_bag_outlined,
+                              color: Colors.black,
+                              size: 16,
+                            )),
+                      ),
                     ),
                   ],
                 ),
@@ -424,60 +494,7 @@ class _Page2State extends State<Page2> {
                             )),
                       ),
 
-                      Padding(
-                        padding:  const EdgeInsets.symmetric(horizontal: 10),
-                        child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('Total Price',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.w400,
-                                    )),
-                                Text('\$ ${536}.${24}',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 20.sp,
-                                      fontWeight: FontWeight.w700,
-                                    )),
-                              ],
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 40.w, ),
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (builder)=>const Cart()  ));
-                                },
-                                child: Container(
-                                    width: 160.w,
-                                    height: 40.h,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        border: Border.all(
-                                            width: 1,
-                                            color: Colors.grey.shade900),
-                                        color: const Color(0xfd000000)),
-                                    child: const Padding(
-                                      padding:  EdgeInsets.symmetric(horizontal: 19),
-                                      child: Row(crossAxisAlignment: CrossAxisAlignment.center,
-                                                                          children: [
-                                      Icon(Icons.shopping_bag_outlined,color: Colors.white,),
-                                      SizedBox(width: 10,),
-                                      Text(
-                                        'Add To Cart',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                                                          ],
-                                                                        ),
-                                    )),
-                              ),
-                            )
-                          ],
-                        ),
-                      )
+
                     ],
                   ),
                 ),

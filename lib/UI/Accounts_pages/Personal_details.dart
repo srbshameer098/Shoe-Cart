@@ -97,56 +97,20 @@ body: Padding(
             children: [
               Text('Name  :',
                   style: TextStyle(
-                    fontSize: 25.sp,
+                    fontSize: 23.sp,
                     fontWeight: FontWeight.w400,
                   )
               ),
-              SizedBox(width: 10.w,),
-              SizedBox(width: 190,
+              SizedBox(width: 5.w,),
+              SizedBox(width: 206,
                 child: Text('Pablo',
                     style: TextStyle(
-                      fontSize: 20.sp,
+                      fontSize: 18.sp,
                       fontWeight: FontWeight.w700,
                     )
                 ),
               ),
-              Icon(Icons.edit,size: 20,)
-            ],
-          ),
-        ),
-      ),
-
-
-
-      SizedBox(height: 10.h,),
-
-      Container(
-        width: 340,
-        height: 100,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(width: .5,color: Colors.grey),
-            color: Colors.white),
-        child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 10.h,vertical: 10),
-          child: Row(crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Email   :',
-                  style: TextStyle(
-                    fontSize: 25.sp,
-                    fontWeight: FontWeight.w400,
-                  )
-              ),
-              SizedBox(width: 10.w,),
-              SizedBox(width: 190,
-                child: Text('Example@gmail.com',
-                    style: TextStyle(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w700,
-                    )
-                ),
-              ),
-              Icon(Icons.edit,size: 20,)
+              Icon(Icons.edit,size: 16,)
             ],
           ),
         ),
@@ -164,25 +128,61 @@ body: Padding(
             border: Border.all(width: .5,color: Colors.grey),
             color: Colors.white),
         child: Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 10.h,vertical: 10),
+          child: Row(
+            children: [
+              Text('Email   :',
+                  style: TextStyle(
+                    fontSize: 23.sp,
+                    fontWeight: FontWeight.w400,
+                  )
+              ),
+              SizedBox(width: 5.w,),
+              SizedBox(width: 213.w,
+                child: Text('Example@gmail.com',
+                    style: TextStyle(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
+                    )
+                ),
+              ),
+              Icon(Icons.edit,size: 16.sp,)
+            ],
+          ),
+        ),
+      ),
+
+
+
+      SizedBox(height: 10.h,),
+
+      Container(
+        width: 340,
+        height: 50,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(width:.5.w,color: Colors.grey),
+            color: Colors.white),
+        child: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 10.h),
           child: Row(
             children: [
               Text('Phone  :',
                   style: TextStyle(
-                    fontSize: 25.sp,
+                    fontSize: 23.sp,
                     fontWeight: FontWeight.w400,
                   )
               ),
-              SizedBox(width: 10.w,),
-              SizedBox(width: 190,
+              SizedBox(width: 5.w,),
+              SizedBox(width: 210.w,
                 child: Text('9999999999',
                     style: TextStyle(
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w700,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w400,
                     )
                 ),
               ),
-              Icon(Icons.edit,size: 20,)
+              Icon(Icons.edit,size: 16,)
             ],
           ),
         ),

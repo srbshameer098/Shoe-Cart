@@ -43,6 +43,47 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      bottomSheet: Container(
+        height: 70,
+        decoration: const BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(0.0),
+              topLeft: Radius.circular(0.0),
+            ),
+            color: Color(0xffffffff)),
+        child:   Padding(
+          padding: EdgeInsets.only(left: 0.w, ),
+          child: TextButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (builder)=>const Place_Order()  ));
+            },
+            child: Container(
+                width: 300.w,
+                height: 50.h,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        width: 1,
+                        color: Colors.grey.shade900),
+                    color: const Color(0xfd000000)),
+                child: Padding(
+                  padding:  EdgeInsets.symmetric(horizontal: 75.w),
+                  child: Row(crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+
+
+                      Text(
+                        'Proceed to Checkout',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                )),
+          ),
+        )
+      ),
       appBar: AppBar(
         title: const Center(child: Text('Cart')),
         actions: [
@@ -67,7 +108,7 @@ class _CartState extends State<Cart> {
                 height: 420,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(width: 2, color: Colors.grey.shade100),
+                   // border: Border.all(width: 2, color: Colors.grey.shade100),
                     color: Colors.white),
                 child: Container(
                   child: GestureDetector(
@@ -88,138 +129,135 @@ class _CartState extends State<Cart> {
                           crossAxisCount: 1,
                           crossAxisSpacing: 5,
                           mainAxisSpacing: 5,
-                          childAspectRatio: 100 / 40,
+                          childAspectRatio: 140 / 40,
                           shrinkWrap: true,
                           children: List.generate(
-                            puma.length,
+                            img.length,
                             (index) {
                               _counter.add(1);
                               // ----------- Main container -----------------
 
                               return Container(
-                                // width: 300.w,
-                                // height: 100.h,
+                                // width: 350.w,
+                                // height: 70.h,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(18),
-                                    // border: Border.all(width: 1,color: Colors.grey),
-                                    color: Color(0xfef8d8d)),
+                                    border: Border.all(width: 1,color: Colors.grey.shade300),
+                                    color: Color(0xffffffff)),
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        // ------------ Image container  -----------------
+                                  child: Row(
+                                    children: [
+                                      // ------------ Image container  -----------------
 
-                                        Container(
-                                          // width: 70.w,
-                                          // height: 80.h,
+                                      Container(
+                                        // width: 70.w,
+                                        // height: 80.h,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(16),
+                                            // border: Border.all(width: 1,color: Colors.grey),
+                                            color: Color(0xffffffff)),
+                                        child: SizedBox(
+                                          width: 76.w,
+                                          height: 83.19111633300781.h,
+                                          child: Padding(
+                                            padding: EdgeInsets.only(
+                                                top: 20.h, bottom: 12.h),
+                                            child: Image.asset(
+                                              img[index],
+                                              // width: 76.65777587890625.w,
+                                              // height: 83.19111633300781.h,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+
+                                      SizedBox(
+                                        width: 10.w,
+                                      ),
+
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(name[index],
+                                              style: TextStyle(
+                                                fontSize: 16.sp,
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w500,
+                                              )),
+                                          Text("Free Shipping",
+                                              style: TextStyle(
+                                                fontSize: 12.sp,
+                                                color: Colors.green,
+                                                fontWeight: FontWeight.w400,
+                                              )),
+                                          Text("\$${554}",
+                                              style: TextStyle(
+                                                fontSize: 16.sp,
+                                                fontWeight: FontWeight.w400,
+                                              )),
+                                        ],
+                                      ),
+
+                                      // ---------- INC/Dec Container ------------- //
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 24.w, top: 40.h),
+                                        child: Container(
+
                                           decoration: BoxDecoration(
                                               borderRadius:
-                                                  BorderRadius.circular(16),
+                                                  BorderRadius.circular(25),
                                               // border: Border.all(width: 1,color: Colors.grey),
-                                              color: Color(0xeaffffff)),
-                                          child: SizedBox(
-                                            width: 76.65777587890625.w,
-                                            // height: 83.19111633300781.h,
-                                            child: Padding(
-                                              padding: EdgeInsets.only(
-                                                  top: 20.h, bottom: 12.h),
-                                              child: Image.asset(
-                                                puma[index],
-                                                // width: 76.65777587890625.w,
-                                                // height: 83.19111633300781.h,
+                                              color: Color(0xb6ffffff)),
+                                          child: Row(
+                                            children: [
+
+
+                                              IconButton(
+                                                  onPressed:()
+                                                  {
+                                                    decrementCounter(index);
+                                                  },
+                                                  icon: Icon(Icons.remove,size: 16,)),
+
+
+                                              Text(
+                                                '${_counter[index]}',
+                                                style: TextStyle(fontWeight: FontWeight.w500,fontSize: 14),
+
+
                                               ),
-                                            ),
+
+
+
+                                              IconButton(
+                                                  onPressed:()
+                                                  {
+                                                    _incrementCounter(index);
+                                                  },
+                                                  icon: Icon(Icons.add,size: 16,)),
+
+
+
+
+
+
+
+                                            ],
                                           ),
                                         ),
-
-                                        SizedBox(
-                                          width: 10.w,
-                                        ),
-
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(name[index],
-                                                style: TextStyle(
-                                                  fontSize: 16.sp,
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w500,
-                                                )),
-                                            Text("Free Shipping",
-                                                style: TextStyle(
-                                                  fontSize: 12.sp,
-                                                  color: Colors.green,
-                                                  fontWeight: FontWeight.w400,
-                                                )),
-                                            Text("\$${554}",
-                                                style: TextStyle(
-                                                  fontSize: 16.sp,
-                                                  fontWeight: FontWeight.w400,
-                                                )),
-                                          ],
-                                        ),
-
-                                        // ---------- INC/Dec Container ------------- //
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 24.w, top: 40.h),
-                                          child: Container(
-
-                                            decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
-                                                // border: Border.all(width: 1,color: Colors.grey),
-                                                color: Color(0xa1eaeaea)),
-                                            child: Row(
-                                              children: [
-
-
-                                                IconButton(
-                                                    onPressed:()
-                                                    {
-                                                      decrementCounter(index);
-                                                    },
-                                                    icon: Icon(Icons.remove,size: 18,)),
-
-
-                                                Text(
-                                                  '${_counter[index]}',
-                                                  style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),
-
-
-                                                ),
-
-
-
-                                                IconButton(
-                                                    onPressed:()
-                                                    {
-                                                      _incrementCounter(index);
-                                                    },
-                                                    icon: Icon(Icons.add,size: 18,)),
+                                      )
 
 
 
 
 
-
-
-                                              ],
-                                            ),
-                                          ),
-                                        )
-
-
-
-
-
-                                      ],
-                                    ),
+                                    ],
                                   ),
                                 ),
                               );
@@ -233,16 +271,16 @@ class _CartState extends State<Cart> {
               ),
 
               SizedBox(
-                height: 15.h,
+                height: 19.h,
               ),
               // -------------- 2nd Container  ------------------  //
 
               Container(
-                // width: 334,
-                // height: 138,
+                width: 334,
+                height: 138,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(width: 2, color: Colors.grey.shade200),
+                    border: Border.all(width: 1, color: Colors.grey.shade200),
                     color: Colors.white),
                 child: Padding(
                   padding: EdgeInsets.only(
@@ -356,19 +394,9 @@ class _CartState extends State<Cart> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 15.h,
-              ),
 
-              ClickButton(
-                  title: 'Proceed to Checkout',
 
-                    onTap: (){
-                      Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (builder)=>Place_Order()
-                      ));
-                    },
-                  )
+
             ],
           ),
         ),

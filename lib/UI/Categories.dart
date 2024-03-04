@@ -37,7 +37,7 @@ class _CategoriesState extends State<Categories> {
                   color: Colors.black,
                   fontWeight: FontWeight.w800,
                 )),
-            SizedBox(height: 20.h,),
+            SizedBox(height: 40.h,),
             Expanded(
 
               child: GestureDetector(
@@ -48,17 +48,17 @@ class _CategoriesState extends State<Categories> {
                 },
                 child: ListView.separated(
 
-                  itemCount: puma.length,
+                  itemCount: logo.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
-                      // width: 100.w,
-                      // height: 70.h,
+                      width: 100.w,
+                      height: 60.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
-                           border: Border.all(width: 1,color: Colors.grey),
+                          // border: Border.all(width: 1,color: Colors.grey),
                           color: Color(0xfd000000)),
                       child: Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: 10.h),
+                        padding:  EdgeInsets.symmetric(horizontal: 10.h,vertical: 10),
                         child: Row(
                           children: [
                             SizedBox( width: 76.65777587890625.w,
@@ -70,7 +70,7 @@ class _CategoriesState extends State<Categories> {
                               ),
                             ),
                             SizedBox(width: 120.w,
-                              child: Text(name[index],
+                              child: Text(logoname[index],
                                   style: TextStyle(
                                     fontSize: 18.sp,
                                     color: Colors.white,
@@ -100,7 +100,7 @@ class _CategoriesState extends State<Categories> {
                   },
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(
-                      height: 20.h,
+                      height: 30.h,
                     );
                   },
                 ),
