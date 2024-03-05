@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:untitled1/UI/Accounts_pages/My_orders.dart';
 import 'package:untitled1/UI/Accounts_pages/Personal_details.dart';
 
 import '../Auth/login_screen.dart';
@@ -153,38 +155,44 @@ class _AccountState extends State<Account> {
                             child: Divider(thickness: 0,)),
 
 
-                        Padding(
-                          padding:  EdgeInsets.only(
-                              // left: 14.w,right: 14.w,
-                              top:12.h,bottom: 4.h),
-                          child: Row(
-                            children: [
-                              Container(
-                                height: 30,width: 30,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  // border: Border.all(width: 2,color: Colors.grey),
-                                  color: Color(0xfddedede),),
-                                child:
-                                Icon(Icons.shopping_bag,
-                                  color: Color(0xfd000000),), ),
-                              SizedBox(width: 10.w,),
-                              SizedBox(width: 212.w,
-                                child: Text(
-                                    "My Orders",
-                                    style: TextStyle(
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w700,
-                                    )
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (builder) => My_Order()));
+                          },
+                          child: Padding(
+                            padding:  EdgeInsets.only(
+                                // left: 14.w,right: 14.w,
+                                top:12.h,bottom: 4.h),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 30,width: 30,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    // border: Border.all(width: 2,color: Colors.grey),
+                                    color: Color(0xfddedede),),
+                                  child:
+                                  Icon(Icons.shopping_bag,
+                                    color: Color(0xfd000000),), ),
+                                SizedBox(width: 10.w,),
+                                SizedBox(width: 212.w,
+                                  child: Text(
+                                      "My Orders",
+                                      style: TextStyle(
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w700,
+                                      )
+                                  ),
                                 ),
-                              ),
 
 
-                              SizedBox(width: 15.w,),
-                              Icon(Icons.arrow_forward_ios_outlined,size: 18,
-                                color: Color(0xfd000000),)
+                                SizedBox(width: 15.w,),
+                                Icon(Icons.arrow_forward_ios_outlined,size: 18,
+                                  color: Color(0xfd000000),)
 
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(
