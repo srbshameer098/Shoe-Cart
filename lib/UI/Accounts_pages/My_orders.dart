@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled1/UI/Home.dart';
+
 class My_Order extends StatefulWidget {
   const My_Order({Key? key}) : super(key: key);
 
@@ -14,58 +15,66 @@ class _My_OrderState extends State<My_Order> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-
-        body: SafeArea(
-          child: Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 15.w,vertical: 40.h),
-            child: Column(
-              children: [
+        length: 2,
+        child: Scaffold(
+          body: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
+              child: Column(children: [
                 SizedBox(
                   child: Row(
                     children: [
-                      Text('My Order',style: TextStyle(fontSize: 20.sp,
-                        fontWeight: FontWeight.w700,),),
-
-                      Flexible(
+                      Text(
+                        'My Order',
+                        style: TextStyle(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      SizedBox(width: 23.w,),
+                      PreferredSize(
+                        preferredSize: Size(100, 100),
                         child: TabBar(
-                                           
-                          indicatorPadding: EdgeInsets.zero,
+                         tabAlignment: TabAlignment.start,
+
+
                           indicatorColor: Colors.transparent,
                           labelColor: Colors.white,
                           isScrollable: true,
                           tabs: [
                             Container(
-                              width: 80.w,
-                              height: 30.h,
+                                width: 80.w,
+                                height: 30.h,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
-                                  border: Border.all(width: 1,color: Colors.grey),
-                        
+                                  border:
+                                      Border.all(width: 1, color: Colors.grey),
                                   color: Color(0xFD000000),
-                        
                                 ),
-                                child: Tab(child: Text('Cancelled'))),
+                                child: Tab(child: Text('Ongoing'))),
                             Container(
                                 width: 80.w,
                                 height: 30.h,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
-                                  border: Border.all(width: 1,color: Colors.grey),
+                                  border:
+                                      Border.all(width: 1, color: Colors.grey),
                                   color: Color(0xFFFFFFFF),
-                        
                                 ),
-                                child: Tab(child: Text('Completed',style: TextStyle(color: Colors.black),))),
-                        
+                                child: Tab(
+                                    child: Text(
+                                  'Completed',
+                                  style: TextStyle(color: Colors.black,),
+                                ))),
                           ],
                         ),
                       ),
-                                ],
-                              ),
+                    ],
+                  ),
                 ),
-
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 Expanded(
                   child: TabBarView(children: [
                     Padding(
@@ -81,17 +90,18 @@ class _My_OrderState extends State<My_Order> {
                           shrinkWrap: true,
                           children: List.generate(
                             4,
-                                (index) {
+                            (index) {
                               // ----------- Main container -----------------
 
                               return Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 12),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 12),
                                 child: Container(
                                   // width: 290.w,
                                   // height: 100.h,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(18),
-                                     //border: Border.all(width: 1,color: Colors.grey),
+                                    //border: Border.all(width: 1,color: Colors.grey),
                                     color: Color(0xFFFFF6F6),
                                     boxShadow: [
                                       BoxShadow(
@@ -118,7 +128,7 @@ class _My_OrderState extends State<My_Order> {
                                           height: 80.h,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                            BorderRadius.circular(16),
+                                                BorderRadius.circular(16),
                                             // border: Border.all(width: 1,color: Colors.grey),
                                             color: Color(0xffe8e8e8),
                                           ),
@@ -143,9 +153,9 @@ class _My_OrderState extends State<My_Order> {
 
                                         Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text(name[index],
                                                 style: TextStyle(
@@ -176,9 +186,6 @@ class _My_OrderState extends State<My_Order> {
                         ),
                       ),
                     ),
-
-
-
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: SizedBox(
@@ -192,11 +199,12 @@ class _My_OrderState extends State<My_Order> {
                           shrinkWrap: true,
                           children: List.generate(
                             4,
-                                (index) {
+                            (index) {
                               // ----------- Main container -----------------
 
                               return Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 12),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 12),
                                 child: Container(
                                   // width: 290.w,
                                   // height: 100.h,
@@ -229,7 +237,7 @@ class _My_OrderState extends State<My_Order> {
                                           height: 80.h,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                            BorderRadius.circular(16),
+                                                BorderRadius.circular(16),
                                             // border: Border.all(width: 1,color: Colors.grey),
                                             color: Color(0xffe8e8e8),
                                           ),
@@ -254,9 +262,9 @@ class _My_OrderState extends State<My_Order> {
 
                                         Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text(name[index],
                                                 style: TextStyle(
@@ -287,15 +295,11 @@ class _My_OrderState extends State<My_Order> {
                         ),
                       ),
                     ),
-
                   ]),
                 )
-          ]
+              ]),
+            ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 }
-
-
